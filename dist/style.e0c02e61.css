@@ -1,0 +1,34 @@
+* {
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  background-color: #B1A7A6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav__select {
+  color: #0B090A;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.nav__select__item {
+  margin: 20px;
+  font-size: 24px;
+}
+.nav__menu {
+  color: #0B090A;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.nav__menu__item {
+  margin: 20px;
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=/style.e0c02e61.css.map */
