@@ -6,17 +6,17 @@
 
 a {
   text-decoration: none;
-  color: #0B091A;
+  color: #0b091a;
 }
 
 .nav {
-  background-color: #B1A7A6;
+  background-color: #b1a7a6;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 .nav__select {
-  color: #0B091A;
+  color: #0b091a;
   display: flex;
   align-items: center;
 }
