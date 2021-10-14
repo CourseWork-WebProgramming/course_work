@@ -4,7 +4,7 @@
   "description": "This project is about the schedule of classes for all groups in my faculty.",
   "main": "index.js",
   "scripts": {
-    "dev" : "parcel src/index.html",
+    "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
   "repository": {

@@ -1,26 +1,35 @@
 $color-banner: #B1A7A6;
 $color-text: #0B091A;
+$color-0: #0b090a;
+$color-10: #161a1d;
+$color-20: #660708;
+$color-30: #a4161a;
+$color-40: #ba181b;
+$color-50: #e5383b;
+$color-60: #b1a7a6;
+$color-70: #d3d3d3;
+$color-80: #f5f3f4;
+$color-90: #fff;
 
 * {
-
-    font-family: 'Mulish', sans-serif;
+    font-family: "Mulish", sans-serif;
     margin: 0;
     padding: 0;
 }
 
 a {
     text-decoration: none;
-    color: $color-text;
+    color: $color-0;
 }
 
 .nav {
-    background-color: $color-banner;
+    background-color: $color-60;
     display: flex;
     align-items: center;
     justify-content: space-around;
 
     &__select {
-        color: $color-text;
+        color: $color-0;
         display: flex;
         align-items: center;
         
@@ -32,7 +41,7 @@ a {
     }
 
     &__menu {
-        color: $color-text;
+        color: $color-0;
         display: flex;
         align-items: center;
         list-style-type: none;
@@ -41,6 +50,100 @@ a {
         &__item {
             margin: 20px;
             font-size: 24px;
+        }
+    }
+}
+
+.week__days {
+    margin: 24px 0;
+    h1 {
+        color: $color-10;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .current__days {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .current__day {
+            width: 100px;
+            height: 80px;
+            background-color: #a4161a;
+            color: $color-80;
+            margin: 0 10px;
+            text-align: center;
+        }
+    }
+}
+.schedule {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 48px;
+    &__caption {
+        margin: 24px 0;
+        h1 {
+            text-align: center;
+            color: $color-10;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        &__item {
+            display: flex;
+            width: 100%;
+            border: 1px solid $color-10;
+        }
+
+        &__time {
+            width: 10%;
+            border: 1px solid $color-10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        &__subgroup {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $color-10;
+            padding: 10px;
+            box-sizing: border-box;
+
+            &--full {
+                width: 90%;
+            }
+
+            &__title {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            &__type {
+                font-size: 16px;
+            }
+
+            &__professor {
+                font-size: 22px;
+                margin: 10px 0;
+            }
+
+            &__place {
+                font-size: 16px;
+            }
+
+            &__link {
+                font-size: 16px;
+            }
         }
     }
 }
