@@ -6,7 +6,7 @@
 
 a {
   text-decoration: none;
-  color: #0b091a;
+  color: #0b090a;
 }
 
 .nav {
@@ -16,7 +16,7 @@ a {
   justify-content: space-around;
 }
 .nav__select {
-  color: #0b091a;
+  color: #0b090a;
   display: flex;
   align-items: center;
 }
@@ -26,7 +26,7 @@ a {
   padding: 6px;
 }
 .nav__menu {
-  color: #0B091A;
+  color: #0b090a;
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -34,6 +34,92 @@ a {
 .nav__menu__item {
   margin: 20px;
   font-size: 24px;
+}
+
+.week__days {
+  margin: 24px 0;
+}
+.week__days h1 {
+  color: #161a1d;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.week__days .current__days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.week__days .current__days .current__day {
+  width: 100px;
+  height: 80px;
+  background-color: #a4161a;
+  color: #f5f3f4;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.schedule {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+.schedule__caption {
+  margin: 24px 0;
+}
+.schedule__caption h1 {
+  text-align: center;
+  color: #161a1d;
+}
+.schedule__container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.schedule__container__item {
+  display: flex;
+  width: 100%;
+  border: 1px solid #161a1d;
+}
+.schedule__container__time {
+  width: 10%;
+  border: 1px solid #161a1d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.schedule__container__subgroup {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #161a1d;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.schedule__container__subgroup--full {
+  width: 90%;
+}
+.schedule__container__subgroup__title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.schedule__container__subgroup__type {
+  font-size: 16px;
+}
+.schedule__container__subgroup__professor {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.schedule__container__subgroup__place {
+  font-size: 16px;
+}
+.schedule__container__subgroup__link {
+  font-size: 16px;
 }
 
 .today {
