@@ -15,11 +15,33 @@
         <img src="img/img-banner.png" alt="" class="header__banner">
     </header>
     <section class="nav">
-        <ul class="nav__select">
-            <li class="nav__select__item">Кафедра</li>
-            <li class="nav__select__item">Група</li>
-            <li class="nav__select__item">Курс</li>
-        </ul>
+        <div class="nav__select">
+            <select class="nav__select__item">
+                <option value="" disabled selected>Кафедра</option>
+                <option value="КМІТ">КМІТ</option>
+                <option value="КПІС">КПІС</option>
+                <option value="КПСТ">КПСТ</option>
+                <option value="КБЗІ">КБЗІ</option>
+                <option value="КІСТ">КІСТ</option>
+            </select>
+            <select class="nav__select__item">
+                <option value="" disabled selected>Група</option>
+                <option value="МІТ">МІТ</option>
+                <option value="ПП">ПП</option>
+                <option value="УІС">УІС</option>
+                <option value="ІБЗ">КБЗІ</option>
+                <option value="КН">КН</option>
+            </select>
+            <select class="nav__select__item">
+                <option value="" disabled selected>Курс</option>
+                <option value="1">1 курс</option>
+                <option value="2">2 курс</option>
+                <option value="3">3 курс</option>
+                <option value="4">4 курс</option>
+                <option value="5">5 курс</option>
+                <option value="6">6 курс</option>
+            </select>
+        </div>
         <ul class="nav__menu">
             <a href="today.html"><li class="nav__menu__item">Сьогодні</li></a>
             <li class="nav__menu__item">Тиждень</li>
