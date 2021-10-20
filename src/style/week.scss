@@ -1,0 +1,96 @@
+@import 'style';
+
+.week__days {
+    margin: 24px 0;
+    h1 {
+        color: $color-10;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .current__days {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .current__day {
+            width: 100px;
+            height: 80px;
+            background-color: #a4161a;
+            color: $color-80;
+            margin: 0 10px;
+            text-align: center;
+        }
+    }
+}
+
+.schedule {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 48px;
+    &__caption {
+        margin: 24px 0;
+        h1 {
+            text-align: center;
+            color: $color-10;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        &__item {
+            display: flex;
+            width: 100%;
+            border: 1px solid $color-10;
+        }
+
+        &__time {
+            width: 10%;
+            border: 1px solid $color-10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        &__subgroup {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $color-10;
+            padding: 10px;
+            box-sizing: border-box;
+
+            &--full {
+                width: 90%;
+            }
+
+            &__title {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            &__type {
+                font-size: 16px;
+            }
+
+            &__professor {
+                font-size: 22px;
+                margin: 10px 0;
+            }
+
+            &__place {
+                font-size: 16px;
+            }
+
+            &__link {
+                font-size: 16px;
+            }
+        }
+    }
+}
