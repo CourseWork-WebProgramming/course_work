@@ -7,45 +7,29 @@
     <title>Today</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/today.scss">
 </head>
 <body>
     <header class="header">
-        <img src="img/img-banner.png" alt="" class="header__banner">
+        <div class="header__title">
+            <img src="img/logo.png" alt="Logo" class="header__logo">
+            <div class="header__container">
+                <p class="header__main-text">
+                    Факультет інформаційних технологій
+                </p>
+                <p class="header__secondary-text">
+                    Faculty of Information Technology
+                </p>
+            </div>
+        </div>
+        <button class="header__button">МІТ-11</button>
     </header>
     <section class="nav">
-        <div class="nav__select">
-            <select class="nav__select__item">
-                <option value="" disabled selected>Кафедра</option>
-                <option value="КМІТ">КМІТ</option>
-                <option value="КПІС">КПІС</option>
-                <option value="КПСТ">КПСТ</option>
-                <option value="КБЗІ">КБЗІ</option>
-                <option value="КІСТ">КІСТ</option>
-            </select>
-            <select class="nav__select__item">
-                <option value="" disabled selected>Група</option>
-                <option value="МІТ">МІТ</option>
-                <option value="ПП">ПП</option>
-                <option value="УІС">УІС</option>
-                <option value="ІБЗ">КБЗІ</option>
-                <option value="КН">КН</option>
-            </select>
-            <select class="nav__select__item">
-                <option value="" disabled selected>Курс</option>
-                <option value="1">1 курс</option>
-                <option value="2">2 курс</option>
-                <option value="3">3 курс</option>
-                <option value="4">4 курс</option>
-                <option value="5">5 курс</option>
-                <option value="6">6 курс</option>
-            </select>
-        </div>
         <ul class="nav__menu">
-            <a href="today.html"><li class="nav__menu__item">Сьогодні</li></a>
-            <a href="week.html"><li class="nav__menu__item">Тиждень</li></a>
-            <a href="month.html"><li class="nav__menu__item">Місяць</li></a>
+            <li><a href="today.html" class="nav__menu__item nav__menu__item--active">Сьогодні</a></li>
+            <li><a href="week.html" class="nav__menu__item">Тиждень</a></li>
+            <li><a href="month.html" class="nav__menu__item">Місяць</a></li>
         </ul>
     </section>
 

@@ -1,18 +1,7 @@
-$color-banner: #B1A7A6;
-$color-text: #0B091A;
-$color-0: #0b090a;
-$color-10: #161a1d;
-$color-20: #660708;
-$color-30: #a4161a;
-$color-40: #ba181b;
-$color-50: #e5383b;
-$color-60: #b1a7a6;
-$color-70: #d3d3d3;
-$color-80: #f5f3f4;
-$color-90: #fff;
+@import 'variables';
 
 * {
-    font-family: "Mulish", sans-serif;
+    font-family: 'Ruda', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -22,261 +11,149 @@ a {
     color: $color-0;
 }
 
-.nav {
+.header {
+    height: 60px;
+    padding: 5px 70px;
     background-color: $color-60;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
 
-    &__select {
-        color: $color-0;
-        display: flex;
-        align-items: center;
-        
-        &__item {
-            margin: 18px;
-            font-size: 24px;
-            padding: 6px;
-        }
+    @media screen and (max-width: 1440px) {
+        padding: 5px 50px;
     }
 
-    &__menu {
-        color: $color-0;
-        display: flex;
-        align-items: center;
-        list-style-type: none;
-        
-
-        &__item {
-            margin: 20px;
-            font-size: 24px;
-        }
+    @media screen and (max-width: 1160px) {
+        padding: 5px 16px;
     }
-}
 
-.week__days {
-    margin: 24px 0;
-    h1 {
-        color: $color-10;
-        text-align: center;
-        margin-bottom: 24px;
+    @media screen and (max-width: 660px) {
+        height: 45px;
+        padding: 2.5px 10px;
     }
-    .current__days {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .current__day {
-            width: 100px;
-            height: 80px;
-            background-color: #a4161a;
-            color: $color-80;
-            margin: 0 10px;
-            text-align: center;
-        }
-    }
-}
-.schedule {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 48px;
-    &__caption {
-        margin: 24px 0;
-        h1 {
-            text-align: center;
-            color: $color-10;
-        }
-    }
-    &__container {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-
-        &__item {
-            display: flex;
-            width: 100%;
-            border: 1px solid $color-10;
-        }
-
-        &__time {
-            width: 10%;
-            border: 1px solid $color-10;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-        }
-
-        &__subgroup {
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid $color-10;
-            padding: 10px;
-            box-sizing: border-box;
-
-            &--full {
-                width: 90%;
-            }
-
-            &__title {
-                font-size: 24px;
-                font-weight: bold;
-            }
-
-            &__type {
-                font-size: 16px;
-            }
-
-            &__professor {
-                font-size: 22px;
-                margin: 10px 0;
-            }
-
-            &__place {
-                font-size: 16px;
-            }
-
-            &__link {
-                font-size: 16px;
-            }
-        }
-    }
-}
-
-.today {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 
     &__title {
-        margin: 40px 0;
-        font-size: 30px;
-        font-weight: bold;
+        display: flex;
+    }
+
+    &__logo {
+        @media screen and (max-width: 660px) {
+            height: 45px;
+        }
     }
 
     &__container {
+        margin-left: 14px;
         display: flex;
         flex-direction: column;
-        width: 80%;
+        justify-content: space-around;
 
-        &--month {
-            width: auto;
+        @media screen and (max-width: 660px) {
+            display: none;
+        }
+    }
+
+    &__main-text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        color: $color-30;
+
+        @media screen and (max-width: 960px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        @media screen and (max-width: 760px) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    &__secondary-text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 24px;
+        color: $color-0;
+
+        @media screen and (max-width: 960px) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        @media screen and (max-width: 760px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &__button {
+        background-color: $color-40;
+        border-radius: 5px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: $color-80;
+        padding: 11px 32px 11px;
+        outline: none;
+        border: none;
+        transition: background-color 200ms ease-in;
+
+        @media screen and (max-width: 760px) {
+            padding: 10px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        &:hover {
+            background-color: $color-20;
+        }
+    }
+}
+
+.nav {
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+        width: 360px;
+        margin: 28px auto;
+
+        @media screen and (max-width: 960px) {
+            margin: 22px auto;
+        }
+
+        @media screen and (max-width: 660px) {
+            margin: 10px auto;
+            width: 220px;
         }
 
         &__item {
-            display: flex;
-            width: 100%;
-            border: 1px solid $color-banner;
-        }
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            color: $color-10;
+            transition: color 200ms ease-in;
 
-        &__time {
-            width: 10%;
-            border: 1px solid $color-banner;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-        }
-
-        &__subgroup {
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid $color-banner;
-            padding: 10px;
-            box-sizing: border-box;
-
-            &--full {
-                width: 90%;
+            @media screen and (max-width: 660px) {
+                font-size: 14px;
+                line-height: 17px;
             }
 
-            &__title {
-                font-size: 24px;
-                font-weight: bold;
+            &--active {
+                font-weight: 900;
+                color: $color-40;
             }
 
-            &__type {
-                font-size: 16px;
-            }
-
-            &__professor {
-                font-size: 22px;
-                margin: 10px 0;
-            }
-
-            &__place {
-                font-size: 16px;
-            }
-
-            &__link {
-                font-size: 16px;
+            &:hover {
+                color: $color-20;
             }
         }
-    }
-}
-
-.name__of__choosen__group {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 23px;
-}
-
-.month__container {
-    // width: 80%;
-    max-width: 1300px;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.month__calendar {
-    height: 564px;
-    width: 658px;
-    margin: 20px;
-    display: grid;
-    grid-template-columns: 90px 90px 90px 90px 90px 90px 90px;
-    grid-template-rows: 90px 90px 90px 90px 90px 90px;
-
-    &__and__schedule{
-        display: flex;
-        flex-direction: row;
-        margin: 0 10px 0 0 ;
-    }
-}
-   
-.month__day {
-    background-color: #E32629;
-    border: #741C1C solid 2px;
-    height: 90px;
-    width: 90px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-}
-
-.month__schedule{
-    // height: 540px;
-    width: 502px;
-    background-color: #C4C4C4;
-    margin: 20px;
-    border: 2px solid $color-banner;
-
-    &__header {
-        background-color: #161A1D;
-        width: auto;
-        height: 50px;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }
