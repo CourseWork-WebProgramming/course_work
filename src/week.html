@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розклад на Тиждень</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/week.scss">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/week_v2.scss">
 </head>
 
 <body>
@@ -25,7 +21,7 @@
                 </p>
             </div>
         </div>
-        <button class="header__button">МІТ-11</button>
+        <button class="header__button">Обрати групу</button>
     </header>
     <section class="nav">
         <ul class="nav__menu">
@@ -35,123 +31,366 @@
         </ul>
     </section>
 
-    <section class="week__days">
-        <h1>МІТ-11</h1>
-        <div class="current__days">
-            <div class="current__day">Пн</div>
-            <div class="current__day">Вт</div>
-            <div class="current__day">Ср</div>
-            <div class="current__day">Чт</div>
-            <div class="current__day">Пт</div>
-            <div class="current__day">Сб</div>
-            <div class="current__day">Нд</div>
+
+    <section class="days-panel-for-tablet"> <!--Horizontal for tablets-->
+
+
+
+        <div class="days-panel-for-tablet__daycont">
+            <span class="days-panel-for-tablet__day">6 СІЧНЯ</span>
+            <span class="days-panel-for-tablet__weekday">Понеділок</span>
+        </div>
+        <div class="days-panel-for-tablet__daycont days-panel-for-tablet__daycont__active">
+            <span class="days-panel-for-tablet__daycont__day">7 СІЧНЯ</span>
+            <span class="days-panel-for-tablet__daycont__weekdayday">Вівторок</span>
+        </div>
+        <div class="days-panel-for-tablet__daycont">
+            <span class="days-panel-for-tablet__daycont__day">8 СІЧНЯ</span>
+            <span class="days-panel-for-tablet__daycont__weekdayday">Середа</span>
+        </div>
+        <div class="days-panel-for-tablet__daycont">
+            <span class="days-panel-for-tablet__daycont__day">9 СІЧНЯ</span>
+            <span class="days-panel-for-tablet__daycont__weekdayday">Четвер</span>
+        </div>
+        <div class="days-panel-for-tablet__daycont">
+            <span class="days-panel-for-tablet__daycont__day">10 СІЧНЯ</span>
+            <span class="days-panel-for-tablet__daycont__weekdayday">П'ятниця</span>
         </div>
     </section>
-    <section class="schedule">
-        <div class="schedule__caption">
-            <h1>Понеділок</h1>
-        </div>
-        <div class="schedule__container">
-            <div class="schedule__container__item">
-                <div class="schedule__container__time">09:00 - 10:20</div>
-                <div class="schedule__container__subgroup">
-                    <p class="schedule__container__subgroup__title">
-                        Вища математика
-                    </p>
-                    <p class="schedule__container__subgroup__type">
-                        Практика
-                    </p>
-                    <p class="schedule__container__subgroup__professor">
-                        Дахно Н. Б.
-                    </p>
-                    <p class="schedule__container__subgroup__place">
-                        <a class="schedule__container__subgroup__link"
-                            href="https://us02web.zoom.us/j/87340637907?pwd=b2dMYWRoQ2s1WTE4OHpaNk4zYXNpdz09">
-                            Посилання
-                        </a>
-                    </p>
-                </div>
-                <div class="schedule__container__subgroup"></div>
+
+
+
+    <div class="days-panel-for-tablet__today">
+        <span class="days-panel-for-tablet__today__day">7 СІЧНЯ</span>
+        <span class="days-panel-for-tablet__today__weekday">Вівторок</span>
+    </div>
+
+
+
+    <section class="week__container">
+        <div class="week__container__days"> <!--Horizontal -->
+            <div class="week__container__days__wrap"> 
+                <span class="week__container__days__number">6 СІЧНЯ</span> 
+                <span class="week__container__days__name">Понеділок</span>            
             </div>
-            <div class="schedule__container__item">
-                <div class="schedule__container__time">10:30 - 11:50</div>
-                <div class="schedule__container__subgroup">
-                    <p class="schedule__container__subgroup__title">
-                        Основи програмування
-                    </p>
-                    <p class="schedule__container__subgroup__type">
-                        Практика
-                    </p>
-                    <p class="schedule__container__subgroup__professor">
-                        Лещенко О. О.
-                    </p>
-                    <p class="schedule__container__subgroup__place">
-                        <a class="schedule__container__subgroup__link"
-                            href="https://us02web.zoom.us/j/82670578730?pwd=V0FpM2c3RFZqODY0Y1Y1Tng2MWJ0UT09">
-                            Посилання
-                        </a>
-                    </p>
-                </div>
-                <div class="schedule__container__subgroup">
-                    <p class="schedule__container__subgroup__title">
-                        Вища математика
-                    </p>
-                    <p class="schedule__container__subgroup__type">
-                        Практика
-                    </p>
-                    <p class="schedule__container__subgroup__professor">
-                        Дахно Н. Б.
-                    </p>
-                    <p class="schedule__container__subgroup__place">
-                        <a class="schedule__container__subgroup__link"
-                            href="https://us02web.zoom.us/j/87340637907?pwd=b2dMYWRoQ2s1WTE4OHpaNk4zYXNpdz09">
-                            Посилання
-                        </a>
-                    </p>
-                </div>
+            <div class="week__container__days__wrap">
+                <span class="week__container__days__number">7 СІЧНЯ</span> 
+                <span class="week__container__days__name">Вівторок</span>
+                               
             </div>
-            <div class="schedule__container__item">
-                <div class="schedule__container__time">12:10 - 13:30</div>
-                <div class="schedule__container__subgroup schedule__container__subgroup--full">
-                    <p class="schedule__container__subgroup__title">
-                        Вища математика
-                    </p>
-                    <p class="schedule__container__subgroup__type">
-                        Лекція
-                    </p>
-                    <p class="schedule__container__subgroup__professor">
-                        Дахно Н. Б.
-                    </p>
-                    <p class="schedule__container__subgroup__place">
-                        <a class="schedule__container__subgroup__link"
-                            href="https://us02web.zoom.us/j/87340637907?pwd=b2dMYWRoQ2s1WTE4OHpaNk4zYXNpdz09">
-                            Посилання
-                        </a>
-                    </p>
-                </div>
+            <div class="week__container__days__wrap">
+                <span class="week__container__days__number">8 СІЧНЯ</span>
+                <span class="week__container__days__name">Середа</span>
+                                
             </div>
-            <div class="schedule__container__item">
-                <div class="schedule__container__time">13:40 - 15:00</div>
-                <div class="schedule__container__subgroup"></div>
-                <div class="schedule__container__subgroup">
-                    <p class="schedule__container__subgroup__title">
-                        Основи програмування
-                    </p>
-                    <p class="schedule__container__subgroup__type">
-                        Практика
-                    </p>
-                    <p class="schedule__container__subgroup__professor">
-                        Герасименко О. Ю.
-                    </p>
-                    <p class="schedule__container__subgroup__place">
-                        <a class="schedule__container__subgroup__link" href="https://meet.google.com/nna-fjkg-zzz">
-                            Посилання
-                        </a>
-                    </p>
-                </div>
+            <div class="week__container__days__wrap">
+                <span class="week__container__days__number">9 СІЧНЯ</span>
+                <span class="week__container__days__name">Четвер</span>
+                                
+            </div>
+            <div class="week__container__days__wrap">
+                <span class="week__container__days__number">10 СІЧНЯ</span>
+                <span class="week__container__days__name">П'ятниця</span>
+                                
             </div>
         </div>
+
+
+
+        <div class="week__container__vertical">
+            <div class="week__container__vertical__time"> <!--Vertical-->
+                <span class="week__container__vertical__time__classes">09.00 - 10.20</span>
+                <span class="week__container__vertical__time__classes">10.30 - 11.50</span>
+                <span class="week__container__vertical__time__classes">12.10 - 13.30</span>
+                <span class="week__container__vertical__time__classes">13.40 - 15.00</span>
+            </div>
+    
+            <div class="week__container__vertical__sch" >
+                <div class="week__container__vertical__sch__day">
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name">---</span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name">Системи банкової безпеки</span>
+                        <span class="lesson__type">Лекція</span>
+                        <span class="lesson__teacher">Мухін В. Є.</span>
+                        <span class="lesson__classroom">304 ауд.</span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="lesson  lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div class="week__container__vertical__sch__day">
+                    <div class="lesson lesson__type2">
+                        <span class="lesson__name">Системи банкової безпеки</span>
+                        <span class="lesson__type">Лекція</span>
+                        <span class="lesson__teacher">Мухін В. Є.</span>
+                        <span class="lesson__classroom">304 ауд.</span>
+                    </div>
+                    <div class="lesson lesson__type2">
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="lesson lesson__type2">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type2">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                </div>
+
+
+                <div class="week__container__vertical__sch__day">
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name">Системи банкової безпеки</span>
+                        <span class="lesson__type">Лекція</span>
+                        <span class="lesson__teacher">Мухін В. Є.</span>
+                        <span class="lesson__classroom">304 ауд.</span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                </div>
+
+
+                <div class="week__container__vertical__sch__day">
+                    <div class="lesson lesson__type2">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type2">
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="lesson lesson__type2">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type2">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                </div>
+
+                
+                <div class="week__container__vertical__sch__day">
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                </div>
+
+                <div class="for-tablet">
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name">---</span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name">Системи банкової безпеки</span>
+                        <span class="lesson__type">Лекція</span>
+                        <span class="lesson__teacher">Мухін В. Є.</span>
+                        <span class="lesson__classroom">304 ауд.</span>
+                    </div>
+                    <div class="lesson lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="lesson  lesson__type1">
+                        <span class="lesson__name"></span>
+                        <span class="lesson__type"></span>
+                        <span class="lesson__teacher"></span>
+                        <span class="lesson__classrom"></span>
+                        <div class="sg">
+                            <div class="subgroup1">
+                                <span class="lesson__name">Системи банкової безпеки</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Мухін В. Є.</span>
+                                <span class="lesson__classrom">201 ауд.</span>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div class="subgroup2">
+                                <span class="lesson__name">Технології програмува-ння</span>
+                                <span class="lesson__type">Лабораторна</span>
+                                <span class="lesson__teacher">Герасименко О. Ю.</span>
+                                <span class="lesson__classrom">309 ауд.</span>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+        
     </section>
 </body>
-
 </html>
