@@ -1,133 +1,479 @@
 @import 'style';
 
-.name__of__choosen__group {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 23px;
-}
-
-.month__container {
-    // width: 80%;
-    max-width: 1300px;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.month__calendar {
-    height: 564px;
-    width: 658px;
-    margin: 20px;
-    display: grid;
-    grid-template-columns: 90px 90px 90px 90px 90px 90px 90px;
-    grid-template-rows: 90px 90px 90px 90px 90px 90px;
-
-    &__and__schedule{
-        display: flex;
-        flex-direction: row;
-        margin: 0 10px 0 0 ;
-    }
-}
-   
-.month__day {
-    background-color: #E32629;
-    border: #741C1C solid 2px;
-    height: 90px;
-    width: 90px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-}
-
-.month__schedule{
-    // height: 540px;
-    width: 502px;
-    background-color: #C4C4C4;
-    margin: 20px;
-    border: 2px solid $color-banner;
-
-    &__header {
-        background-color: #161A1D;
-        width: auto;
-        height: 50px;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-.today {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    &__title {
-        margin: 40px 0;
-        font-size: 30px;
-        font-weight: bold;
-    }
-
+.month {
     &__container {
+        padding: 35px 50px 50px;
         display: flex;
-        flex-direction: column;
-        width: 80%;
+        justify-content: space-around;
+        height: calc(100% - 200px);
 
-        &--month {
-            width: auto;
+        @media screen and (max-width: 1700px) {
+            padding: 5px 50px 50px;
+            height: calc(100% - 170px);
         }
 
-        &__item {
+        @media screen and (max-width: 960px) {
+            padding: 5px 10px 50px;
+            height: calc(100% - 160px);
+        }
+
+        @media screen and (max-width: 860px) {
+            padding: 5px 50px 20px;
+            height: calc(100% - 130px);
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 660px) {
+            height: calc(100% - 100px);
+            padding: 5px 5px 10px;
+        }
+    }
+
+    &__calendar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 45%;
+
+        @media screen and (max-width: 860px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 660px) {
+            width: 95%;
+        }
+    }
+
+    &__markup {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 30px repeat(5, 1fr);
+        grid-template-columns: repeat(7, 1fr);
+
+        @media screen and (max-width: 1700px) {
+            grid-template-rows: 25px repeat(5, 1fr);
+        }
+
+        @media screen and (max-width: 1160px) {
+            grid-template-rows: 20px repeat(5, 1fr);
+        }
+
+        &__weekday {
             display: flex;
+            justify-content: center;
+            font-size: 20px;
+            color: $color-10;
+            text-transform: uppercase;
+
+            @media screen and (max-width: 1700px) {
+                font-size: 18px;
+            }
+
+            @media screen and (max-width: 1160px) {
+                font-size: 16px;
+            }
+
+            @media screen and (max-width: 860px) {
+                font-size: 14px;
+            }
+        }
+
+        &__day {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-right: 3px solid $color-70;
+            border-top: 3px solid $color-70;
+            color: $color-10;
+
+            @media screen and (max-width: 1700px) {
+                padding: 6px;
+            }
+
+            @media screen and (max-width: 860px) {
+                border-width: 2px;
+                padding: 4px;
+            }
+
+            &:nth-last-child(-n+7) {
+                border-bottom: 3px solid $color-70;
+
+                @media screen and (max-width: 860px) {
+                    border-width: 2px;
+                }
+            }
+
+            &:nth-child(7n+1) {
+                border-left: 3px solid $color-70;
+
+                @media screen and (max-width: 860px) {
+                    border-width: 2px;
+                }
+            }
+
+            &:nth-child(8) {
+                border-radius: 5px 0 0;
+            }
+
+            &:nth-child(14) {
+                border-radius: 0 5px 0;
+            }
+
+            &:last-child {
+                border-radius: 0 0 5px;
+            }
+
+            &:nth-last-child(7) {
+                border-radius: 0 0 0 5px;
+            }
+
+            &:hover {
+                background-color: rgba($color-40, 0.1);
+
+                .month__markup__day__lesson {
+                    background-color: $color-80;
+                }
+            }
+
+            &--grey {
+                color: $color-70;
+            }
+
+            &--chosen {
+                background-color: $color-40;
+                transform: scale(1.05);
+                border: none;
+                border-radius: 5px;
+
+                .month__markup__day__number {
+                    color: $color-80;
+                }
+
+                .month__markup__day__lesson {
+                    background-color: $color-80;
+                }
+
+                &:hover {
+                    background-color: $color-40;
+                }
+            }
+
+            &__number {
+                font-size: 28px;
+
+                @media screen and (max-width: 1700px) {
+                    font-size: 22px;
+                }
+
+                @media screen and (max-width: 1160px) {
+                    font-size: 18px;
+                }
+
+                @media screen and (max-width: 860px) {
+                    font-size: 16px;
+                }
+            }
+
+            &__lessons {
+                padding: 5px;
+
+                @media screen and (max-width: 860px) {
+                    padding: 4px 4px 0 0;
+                }
+            }
+
+            &__lesson {
+                width: 15px;
+                height: 15px;
+                background-color: $color-70;
+                border-radius: 50%;
+                margin-bottom: 5px;
+
+                @media screen and (max-width: 1700px) {
+                    width: 10px;
+                    height: 10px;
+                }
+
+                @media screen and (max-width: 1160px) {
+                    width: 8px;
+                    height: 8px;
+                }
+      
+                @media screen and (max-width: 860px) {
+                    width: 6px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+
+    &__selection {
+        font-size: 30px;
+        color: $color-10;
+        margin-top: 10px;
+
+        @media screen and (max-width: 1700px) {
+            font-size: 22px;
+            margin-top: 4px;
+        }
+
+        @media screen and (max-width: 1160px) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 860px) {
+            font-size: 16px;
+        }
+
+        &__icon {
+            margin: 0 10px;
+            height: auto;
+
+            @media screen and (max-width: 1700px) {
+                height: 14px;
+            }
+
+            @media screen and (max-width: 1160px) {
+                height: 11px;
+            }
+        }
+    }
+
+    &__schedule {
+        background: $color-80;
+        box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        width: 40%;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: 1700px) {
+            padding: 16px;
+        }
+
+        @media screen and (max-width: 1160px) {
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 860px) {
+            display: none;
+        }
+
+        &__date {
+            font-size: 34px;
+            text-transform: uppercase;
+            color: $color-20;
+
+            @media screen and (max-width: 1700px) {
+                font-size: 26px;
+            }
+
+            @media screen and (max-width: 1160px) {
+                font-size: 22px;
+            }
+        }
+
+        &__weekday {
+            font-size: 20px;
+            color: $color-60;
+
+            @media screen and (max-width: 1700px) {
+                font-size: 18px;
+            }
+
+            @media screen and (max-width: 1160px) {
+                font-size: 12px;
+            }
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
             width: 100%;
-            border: 1px solid $color-banner;
+            height: 100%;
+        }
+
+        &__class {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            @media screen and (max-width: 1700px) {
+                justify-content: space-between;
+            }
+
+            &--sub {
+                width: 50%;
+            }
+
+            &--empty {
+                justify-content: center;
+            }
+
+            &__container {
+                display: flex;
+                width: 100%;
+                height: 25%;
+                margin-bottom: 5px;
+
+                @media screen and (max-width: 1700px) {
+                    justify-content: space-between;
+                }
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+            }
+
+            
+            &__subgroup {
+                font-size: 18px;
+                color: $color-10;
+
+                @media screen and (max-width: 1700px) {
+                    font-size: 16px;
+                }
+
+                @media screen and (max-width: 1160px) {
+                  font-size: 12px;
+                }
+
+                &__container {
+                    display: flex;
+                    justify-content: end;
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    @media screen and (max-width: 1700px) {
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+
+            &__subgroups {
+                width: 93%;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            &__group {
+                display: flex;
+                background: rgba($color-70, 0.2);
+                border-radius: 5px;
+                padding: 10px;
+                width: 94%;
+
+                @media screen and (max-width: 1160px) {
+                    padding: 5px;
+                }
+
+                &--red {
+                    background: rgba($color-40, 0.1);
+                }
+            }
+
+            &__divider {
+                width: 1px;
+                height: 100%;
+                background-color: $color-60;
+                margin: 0 5px;
+
+                &--light {
+                  background-color: $color-70;
+                }
+            }
+
+            &__empty {
+                height: 1px;
+                width: 30%;
+                background-color: $color-10;
+            }
+
+            &__name {
+                font-size: 19px;
+                color: $color-10;
+                text-align: center;
+
+                @media screen and (max-width: 1700px) {
+                    font-size: 15px;
+                }
+
+                @media screen and (max-width: 1160px) {
+                  font-size: 13px;
+                }
+            }
+
+            &__type {
+                font-size: 12px;
+                color: $color-20;
+                text-align: center;
+
+                @media screen and (max-width: 1160px) {
+                  font-size: 10px;
+                }
+            }
+
+            &__professor {
+                font-size: 18px;
+                color: $color-10;
+                text-align: center;
+
+                @media screen and (max-width: 1700px) {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 1160px) {
+                    font-size: 12px;
+                }
+            }
+
+            &__place {
+                font-size: 18px;
+                color: $color-20;
+                text-align: center;
+
+                @media screen and (max-width: 1700px) {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 1160px) {
+                    font-size: 12px;
+                }
+
+                img {
+                  height: auto;
+
+                  @media screen and (max-width: 1700px) {
+                      height: 9px;
+                  }
+
+                  @media screen and (max-width: 1160px) {
+                    height: 8px;
+                  }
+                }
+            }
         }
 
         &__time {
-            width: 10%;
-            border: 1px solid $color-banner;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-        }
-
-        &__subgroup {
-            width: 45%;
+            font-size: 18px;
+            width: 6%;
+            color: $color-10;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 1px solid $color-banner;
-            padding: 10px;
-            box-sizing: border-box;
+            margin-right: 10px;
 
-            &--full {
-                width: 90%;
-            }
-
-            &__title {
-                font-size: 24px;
-                font-weight: bold;
-            }
-
-            &__type {
+            @media screen and (max-width: 1700px) {
                 font-size: 16px;
             }
 
-            &__professor {
-                font-size: 22px;
-                margin: 10px 0;
-            }
-
-            &__place {
-                font-size: 16px;
-            }
-
-            &__link {
-                font-size: 16px;
+            @media screen and (max-width: 1160px) {
+                font-size: 12px;
             }
         }
     }

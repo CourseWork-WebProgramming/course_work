@@ -8,23 +8,66 @@ $justify: space-evenly;
 .week__container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: #F5F3F4;
-    margin:0 40px 31px 40px;
+    margin: 0 30px;
+    margin-bottom: 30px;
+    padding: 5px;
     border-radius: 5px;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
     height: fit-content;
+    height: calc(100% - 155px);
+
+    @media screen and (max-width: 1200px) {
+        height: calc(100% - 213px);
+        width: 70%;
+        margin: 0 auto 30px;
+    }
+
+    @media screen and (max-width: 960px) {
+        height: calc(100% - 203px);
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 80%;
+        padding: 10px;
+        height: calc(100% - 213px);
+    }
+
+    @media screen and (max-width: 660px) {
+        height: calc(100% - 172px);
+        width: 90%;
+    }
     
-
-
     &__days{
-        margin-left: 100px;
+        width: 97%;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
+
+        &__wrapper {
+            width: 100%;
+            height: 6%;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+        }
+
         &__wrap{
             display: flex;
             flex-direction: column;
-            margin: 10px;
+            align-items: center;
+        }
+
+        &__name {
+            font-size: 14px;
+            color: $color-20;
+        }
+
+        &__number {
+            font-size: 18px;
+            text-transform: uppercase;
+            color: $color-10;
         }
 
     }
@@ -32,40 +75,77 @@ $justify: space-evenly;
         display: flex;
         flex-direction: row;
         justify-content: $justify;
-        margin-bottom: 10px ;
-        padding-bottom: 30px;
+        align-items: center;
+        height: 94%;
+
+        @media screen and (max-width: 1200px){
+            height: 100%;
+        }
+
         &__time{
             display: flex;
-            flex-direction:column;
-            margin-left: 10px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
             vertical-align: middle;
+            width: 3%;
+            height: 98%;
+
+            @media screen and (max-width: 1200px){
+                display: none;
+            }
+
             &__classes{
-                margin: auto;
-                width: 60px;
-                height: 103px;
                 display: flex;
                 align-items: center;
                 text-align: center;
-                font-size: 21px;
-                line-height: 29px;
-                
-                
+                font-size: 14px;                
+            }
+
+            &__container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                vertical-align: middle;
+                width: 100%;
+                height: 92%;
+            }
+
+            &__tablet {
+                display: none;
+
+                @media screen and (max-width: 1200px){
+                    display: block;
+                    height: 8%;
+                    width: 100%;
+                }
+            }
         }
-        }
+
         &__sch{
             display: flex;
             flex-direction: row;
-            margin: 10px;
+            margin-left: 5px;
+            width: 97%;
+            height: 98%;
+
+            @media screen and (max-width: 1200px){
+                height: 100%;
+                width: 95%;
+            }
             
                 &__day{
-                    margin: 0 0 10px 0;
-                    // width: 247px;
-                    // height: 760px;
                     background-color: #F5F3F4;
-                    @media screen and (max-width: 1100px) {
-                        display: none;
+                    margin-right: 3px;
+
+                    &:nth-child(5) {
+                        margin-right: 0;
                     }
 
+                    @media screen and (max-width: 1200px) {
+                        display: none;
+                    }
 
                 }
             }
@@ -73,36 +153,37 @@ $justify: space-evenly;
 }
 
 .lesson{
-    height: 186px;
-    margin: 3px;
+    margin-bottom: 3px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
     vertical-align: middle;
     padding: 5px;
+    height: 22%;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 
     &__name{
-        margin: auto;
-
-        font-size: 17px;
+        font-size: 15px;
         text-align: center;
         
     }
     &__type{
-        margin: auto;
         color: $color-20;
         text-align: center;
-        font-size: 13px;
+        font-size: 12px;
     }
     &__teacher{
-        margin: auto;
         text-align: center;
-        font-size: 16px;
+        font-size: 14px;
     }
     &__classroom{
-        margin: auto;
+        font-size: 14px;
         color: $color-20;
         text-align: center;
     }
@@ -119,79 +200,145 @@ $justify: space-evenly;
     &__type2:nth-child(even){
         background-color: #BA181B1A;
     }
+
+    &__empty {
+        width: 30%;
+        height: 1px;
+        background-color: $color-10;
+    }
+
+    &__subgroup {
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 10px 0;
+            height: 5%;
+        }
+
+        &__title {
+            font-size: 16px;
+            color: $color-10;
+        }
+    }
+
+    &__container {
+        height: 95%;
+    }
 }
 
 .vertical-line{
     border-left: 1px solid #B1A7A6;
-    height: 182px;
+    margin: 5px;
     width: 1px;
 }
 
 .sg{
     display: flex;
     flex-direction: row;
+    height: 100%;
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        justify-content: space-evenly;
+    }
 }
 
 .subgroup1, .subgroup2{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
 }
 
 
 
-@media screen and (min-width: 1101px){
+@media screen and (min-width: 1201px){
     .for-tablet{
         display: none;
     }
     .days-panel-for-tablet{
         display: none;
     }
-    .days-panel-for-tablet__today{
+
+    .week__container__vertical__time--tablet {
         display: none;
     }
-    
 }
 
-@media screen and (max-width: 1100px){
-    .week__container__days{
+@media screen and (max-width: 1200px){
+    .week__container__days__wrapper {
         display: none;
     }
 
     .for-tablet{
-        margin: 0 0 10px 0;
-        // width: 528px;
-        height: 760px;
+       height: 100%;
+       width: 100%;
     }
+
     .days-panel-for-tablet{
+        height: 58px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
 
         &__daycont{
-            padding: 10px;
-            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-               &__active{
-                background-color: $color-20;
+
+            &__active {
+                background-color: $color-40;
                 color: white;
+                border-radius: 5px;
+                padding: 5px 5px 0;
+                margin: -4px 0 12px;
+
+                @media screen and (max-width: 560px) {
+                    margin: -4px 0 16px;
+                }
+
+                .days-panel-for-tablet__day {
+                    color: $color-80;
+                }
+
+                .days-panel-for-tablet__weekday {
+                    color: $color-80;
+                }
             }
         }
 
-        &__today{
-            display: flex;
-            flex-direction: column;
-            margin-left: 50px;
+        &__day {
+            font-size: 18px;
+            color: $color-10;
+        }
 
-            &__day{
-                color: $color-20;
-                font-size: 30px;
-
-            }
-            &__weekday{
-                color: #B1A7A6;
-                font-size: 27px;
-            }
+        &__weekday {
+            font-size: 16px;
+            color: $color-20;
         }
     }
 
+    .week__container__vertical__time--tablet {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 5%;
+        margin: 0 10px;
+    }
+
+}
+
+@media screen and (max-width: 560px){
+    .days-panel-for-tablet{
+        &__day {
+            font-size: 16px;
+        }
+
+        &__weekday {
+            font-size: 14px;
+        }
+    }
 }
