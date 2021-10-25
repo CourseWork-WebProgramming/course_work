@@ -5,8 +5,10 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     background-color: $color-80;
+    height: 100vh;
 }
 
 a {
@@ -15,7 +17,7 @@ a {
 }
 
 .header {
-    height: 60px;
+    height: 40px;
     padding: 5px 70px;
     background-color: $color-60;
     display: flex;
@@ -31,17 +33,18 @@ a {
     }
 
     @media screen and (max-width: 660px) {
-        height: 45px;
         padding: 2.5px 10px;
     }
 
     &__title {
         display: flex;
+        height: 100%;
     }
 
     &__logo {
+        height: 40px;
         @media screen and (max-width: 660px) {
-            height: 45px;
+            height: 40px;
         }
     }
 
@@ -52,6 +55,10 @@ a {
         justify-content: space-around;
 
         @media screen and (max-width: 660px) {
+            margin-left: 4px;
+        }
+
+        @media screen and (max-width: 480px) {
             display: none;
         }
     }
@@ -59,36 +66,30 @@ a {
     &__main-text {
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 20px;
         color: $color-30;
-
-        @media screen and (max-width: 960px) {
-            font-size: 20px;
-            line-height: 24px;
-        }
 
         @media screen and (max-width: 760px) {
             font-size: 18px;
-            line-height: 22px;
+        }
+
+        @media screen and (max-width: 660px) {
+            font-size: 16px;
         }
     }
 
     &__secondary-text {
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 16px;
         color: $color-0;
 
-        @media screen and (max-width: 960px) {
-            font-size: 18px;
-            line-height: 22px;
+        @media screen and (max-width: 760px) {
+            font-size: 14px;
         }
 
-        @media screen and (max-width: 760px) {
-            font-size: 16px;
-            line-height: 20px;
+        @media screen and (max-width: 660px) {
+            font-size: 12px;
         }
     }
 
@@ -97,19 +98,17 @@ a {
         border-radius: 5px;
         font-style: normal;
         font-weight: normal;
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 16px;
         text-align: center;
         color: $color-80;
-        padding: 11px 32px 11px;
+        padding: 8px 20px 7px;
         outline: none;
         border: none;
         transition: background-color 200ms ease-in;
 
-        @media screen and (max-width: 760px) {
-            padding: 10px;
-            font-size: 14px;
-            line-height: 17px;
+        @media screen and (max-width: 660px) {
+            padding: 9px 16px 9px;
+            font-size: 12px;
         }
 
         &:hover {
@@ -125,10 +124,10 @@ a {
         align-items: center;
         list-style-type: none;
         width: 360px;
-        margin: 28px auto;
+        margin: 20px auto;
 
         @media screen and (max-width: 960px) {
-            margin: 22px auto;
+            margin: 15px auto;
         }
 
         @media screen and (max-width: 660px) {
@@ -140,13 +139,11 @@ a {
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
-            line-height: 22px;
             color: $color-10;
             transition: color 200ms ease-in;
 
             @media screen and (max-width: 660px) {
                 font-size: 14px;
-                line-height: 17px;
             }
 
             &--active {
