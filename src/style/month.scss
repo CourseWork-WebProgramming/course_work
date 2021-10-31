@@ -48,16 +48,7 @@
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-rows: 30px repeat(5, 1fr);
         grid-template-columns: repeat(7, 1fr);
-
-        @media screen and (max-width: 1700px) {
-            grid-template-rows: 25px repeat(5, 1fr);
-        }
-
-        @media screen and (max-width: 1160px) {
-            grid-template-rows: 20px repeat(5, 1fr);
-        }
 
         &__weekday {
             display: flex;
@@ -144,7 +135,8 @@
                 background-color: $color-40;
                 transform: scale(1.05);
                 border: none;
-                border-radius: 5px;
+                border-radius: 5px !important;
+                transition: transform 300ms ease-in-out;
 
                 .month__markup__day__number {
                     color: $color-80;
@@ -161,6 +153,7 @@
 
             &__number {
                 font-size: 28px;
+                pointer-events: none;
 
                 @media screen and (max-width: 1700px) {
                     font-size: 22px;
@@ -177,6 +170,7 @@
 
             &__lessons {
                 padding: 5px;
+                pointer-events: none;
 
                 @media screen and (max-width: 860px) {
                     padding: 4px 4px 0 0;
@@ -212,6 +206,8 @@
         font-size: 30px;
         color: $color-10;
         margin-top: 10px;
+        display: flex;
+        user-select: none;
 
         @media screen and (max-width: 1700px) {
             font-size: 22px;
@@ -229,6 +225,13 @@
         &__icon {
             margin: 0 10px;
             height: auto;
+            user-select: none;
+            transition: transform 250ms ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.2);
+            }
 
             @media screen and (max-width: 1700px) {
                 height: 14px;
@@ -314,6 +317,13 @@
                 justify-content: center;
             }
 
+            &__full {
+                align-self: center;
+                height: 0.5px;
+                width: 30%;
+                background-color: $color-10;
+            }
+
             &__container {
                 display: flex;
                 width: 100%;
@@ -326,6 +336,18 @@
 
                 &:last-child {
                   margin-bottom: 0;
+                }
+
+                &--empty {
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    p:first-child {
+                        margin-bottom: 30px;
+                    }
                 }
             }
 
@@ -362,6 +384,7 @@
 
             &__group {
                 display: flex;
+                justify-content: center;
                 background: rgba($color-70, 0.2);
                 border-radius: 5px;
                 padding: 10px;
