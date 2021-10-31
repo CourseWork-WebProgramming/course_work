@@ -6,7 +6,7 @@ import {
     lessonsType,
     lessonsTime
 } from "./constants";
-let data = require('./schedule.json');
+const data = require('./schedule.json');
 
 function createMonthDay(){
     const activeDay = localStorage.getItem("activeDay");

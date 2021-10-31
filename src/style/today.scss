@@ -76,6 +76,17 @@
         width: 100%;
         height: 100%;
 
+        &__empty {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 30px;
+
+            p:first-child {
+                margin-bottom: 30px;
+            }
+        }
+
         &--month {
             width: auto;
         }
