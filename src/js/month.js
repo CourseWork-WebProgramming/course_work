@@ -4,9 +4,10 @@ import {
     monthsCase,
     dayCase,
     lessonsType,
-    lessonsTime
+    lessonsTime,
+    groupNames
 } from "./constants";
-const data = require('./schedule.json');
+const data = localStorage.getItem("data");
 
 const popUp = document.getElementById('month-popup');
 
@@ -404,7 +405,9 @@ function createMonthMarkup(monthId) {
     addEventsToMonthDay();
 };
 
-localStorage.setItem("group", "mit-21");
+// localStorage.setItem("group", "mit-21");
+const groupButton = document.getElementsByClassName("header__button");
+groupButton.innerHTML = groupNames[localStorage.getItem("group")];
 const currentDay = new Date();
 const currentMonthId = currentDay.getMonth() + 1;
 createMonthMarkup(currentMonthId);

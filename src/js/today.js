@@ -4,7 +4,7 @@ import {
     lessonsType,
     lessonsTime
 } from "./constants";
-const data = require('./schedule.json');
+const data = localStorage.getItem("data");
 
 function createDayMarkup() {
     const todaySection = document.getElementById("today");
@@ -168,4 +168,6 @@ function createDayMarkup() {
     todaySection.appendChild(container);
 }
 
+const groupButton = document.getElementsByClassName("header__button");
+groupButton.innerHTML = groupNames[localStorage.getItem("group")];
 createDayMarkup();

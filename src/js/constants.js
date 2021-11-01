@@ -149,11 +149,16 @@ const lessonsType = {
     4: "Семінар"
 };
 
+const groupNames = {
+    "mit-21": "МІТ-21",
+};
+
 export {
     months,
     monthsCase,
     monthTemplates,
     lessonsTime,
     lessonsType,
-    dayCase
+    dayCase,
+    groupNames
 };

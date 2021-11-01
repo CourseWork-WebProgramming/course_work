@@ -4,7 +4,7 @@ import {
     lessonsType,
     lessonsTime
 } from "./constants";
-const data = require('./schedule.json');
+const data = localStorage.getItem("data");
 
 function createWeekMarkup() {
     if (window.innerWidth <= 1200) {
@@ -307,6 +307,9 @@ function getScreenSize() {
         createDesktopWeekMarkup();
     } else {}
 };
+
+const groupButton = document.getElementsByClassName("header__button");
+groupButton.innerHTML = groupNames[localStorage.getItem("group")];
 
 localStorage.setItem("chosenDay", new Date().getDate());
 window.addEventListener("resize", getScreenSize);
