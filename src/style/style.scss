@@ -296,6 +296,10 @@ a {
                     font-size: 14px;
                 }
             }
+
+            select option:hover {
+                background-color: $color-40-lighter;
+            }
         }
         &__button {
             width: 50%;
@@ -332,4 +336,10 @@ a {
 .pop-up.active {
     opacity: 1;
     visibility: visible;
+}
+
+.disable {
+    filter: blur(4px);
+    pointer-events: none;
+    user-select: none;
 }

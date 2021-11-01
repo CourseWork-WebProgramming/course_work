@@ -7,12 +7,14 @@ const group = document.getElementById('select-group');
 
 openPopUp.addEventListener('click', () => {
     popUp.classList.add('active');
-    hideNoGroup.classList.add('nonvisible');
+    hideNoGroup.classList.add('nonvisible', 'disable');
+    document.getElementsByClassName("header")[0].classList.add("disable");
 })
 
 closePopUp.addEventListener('click', () => {
     popUp.classList.remove('active');
-    hideNoGroup.classList.remove('nonvisible');
+    hideNoGroup.classList.remove('nonvisible', 'disable');
+    document.getElementsByClassName("header")[0].classList.remove("disable");
 })
 
 function onGroupChange() {
@@ -24,12 +26,14 @@ group.addEventListener('change', onGroupChange);
 buttonGetGroup.addEventListener('click', () => {
     const group = localStorage.getItem("group");
     if (group) {
-        fetch(`https://my-json-server.typicode.com/CourseWork-WebProgramming/course_work/${group}`)
-        .then(response => response.json())
-        .then((about) => {console.log('data', about)})
-        .catch(e => {
-            console.log(e)
-        });
+        // fetch(`https://my-json-server.typicode.com/CourseWork-WebProgramming/course_work/${group}`)
+        // .then(response => response.json())
+        // .then((about) => {console.log('data', about)})
+        // .catch(e => {
+        //     console.log(e)
+        // });
+
+        window.location.href = 'month.html';
     }
 })
 

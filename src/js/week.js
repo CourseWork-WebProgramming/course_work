@@ -2,9 +2,10 @@ import {
     monthsCase,
     dayCase,
     lessonsType,
-    lessonsTime
+    lessonsTime,
+    groupNames
 } from "./constants";
-const data = localStorage.getItem("data");
+const data = require('./schedule.json');
 
 function createWeekMarkup() {
     if (window.innerWidth <= 1200) {
@@ -308,7 +309,7 @@ function getScreenSize() {
     } else {}
 };
 
-const groupButton = document.getElementsByClassName("header__button");
+const groupButton = document.getElementsByClassName("header__button")[0];
 groupButton.innerHTML = groupNames[localStorage.getItem("group")];
 
 localStorage.setItem("chosenDay", new Date().getDate());

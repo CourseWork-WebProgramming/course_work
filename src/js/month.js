@@ -7,7 +7,7 @@ import {
     lessonsTime,
     groupNames
 } from "./constants";
-const data = localStorage.getItem("data");
+const data = require('./schedule.json');
 
 const popUp = document.getElementById('month-popup');
 
@@ -405,9 +405,6 @@ function createMonthMarkup(monthId) {
     addEventsToMonthDay();
 };
 
-// localStorage.setItem("group", "mit-21");
-const groupButton = document.getElementsByClassName("header__button");
-groupButton.innerHTML = groupNames[localStorage.getItem("group")];
 const currentDay = new Date();
 const currentMonthId = currentDay.getMonth() + 1;
 createMonthMarkup(currentMonthId);
@@ -415,3 +412,6 @@ if (window.innerWidth > 860) {
     setActiveDay(currentDay.getDate());
     createMonthDay();
 } 
+
+const groupButton = document.getElementsByClassName("header__button")[0];
+groupButton.innerHTML = groupNames[localStorage.getItem("group")];
