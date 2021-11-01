@@ -1,0 +1,555 @@
+{
+    "mit-21": {
+        "shift": 2,
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": [],
+        "11": [
+            {
+                "id": 1,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isEmpty": true
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Веб-дизайн та веб-програмування",
+                            "type": 1,
+                            "professor": "Миколайчук Р. А.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/5895265552?pwd=dExSVkFpOVByT0RWbHd0eEV3UStKQT09"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Веб-дизайн та веб-програмування",
+                            "type": 3,
+                            "professor":"Миколайчук Р. А.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/5895265552?pwd=dExSVkFpOVByT0RWbHd0eEV3UStKQT09"
+                        },
+                        "second": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        },
+                        "second": {
+                            "name": "Веб-дизайн та веб-програмування",
+                            "type": 3,
+                            "professor": "Миколайчук Р. А.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/5895265552?pwd=dExSVkFpOVByT0RWbHd0eEV3UStKQT09"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isEmpty": true
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 2,
+                            "professor":"Старкова О. В.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/72623180125?pwd=bXZ6N2crbTNVc0RzdFQvQjhOaEdQdz09"
+                        },
+                        "second": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 3,
+                            "professor": "Герасименко К. В.",
+                            "isOnline": false,
+                            "place": "309 ауд."
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 3,
+                            "professor": "Герасименко К. В.",
+                            "isOnline": false,
+                            "place": "309 ауд."
+                        },
+                        "second": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 2,
+                            "professor":"Старкова О. В.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/72623180125?pwd=bXZ6N2crbTNVc0RzdFQvQjhOaEdQdz09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 2,
+                            "professor":"Старкова О. В.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/72623180125?pwd=bXZ6N2crbTNVc0RzdFQvQjhOaEdQdz09"
+                        },
+                        "second": {
+                            "isEmpty": true
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Основи схемотехніки",
+                            "type": 1,
+                            "professor": "Лещенко О. О.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/85787816453?pwd=cEV1a3lSNEt5eTNCQTBQaE5SdXV6QT09"
+                        }
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Основи схемотехніки",
+                            "type": 3,
+                            "professor":"Лещенко О. О.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/85787816453?pwd=cEV1a3lSNEt5eTNCQTBQaE5SdXV6QT09"
+                        },
+                        "second": {
+                            "name": "Комп'ютерна логіка та дискретна математика",
+                            "type": 2,
+                            "professor": "Дахно Н. Б.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/89308921586?pwd=c2NJT2g5amF6TVdSTkIvcmJTZlhpdz09"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Комп'ютерна логіка та дискретна математика",
+                            "type": 2,
+                            "professor": "Дахно Н. Б.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/89308921586?pwd=c2NJT2g5amF6TVdSTkIvcmJTZlhpdz09"
+                        },
+                        "second": {
+                            "name": "Основи схемотехніки",
+                            "type": 3,
+                            "professor":"Лещенко О. О.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/85787816453?pwd=cEV1a3lSNEt5eTNCQTBQaE5SdXV6QT09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Основи схемотехніки",
+                            "type": 1,
+                            "professor":"Лещенко О. О.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/85787816453?pwd=cEV1a3lSNEt5eTNCQTBQaE5SdXV6QT09"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isSplitted": true,
+                        "first": {
+                            "isEmpty": true
+                        },
+                        "second": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        }
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Комп'ютерна графіка",
+                            "type": 1,
+                            "professor": "Дуднік А. С.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/76901117216?pwd=eWs3U2JCRDIxUVpndytmbTF4MXNpQT09"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        },
+                        "second": {
+                            "name": "Комп'ютерна графіка",
+                            "type": 3,
+                            "professor": "Дуднік А. С.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/76901117216?pwd=eWs3U2JCRDIxUVpndytmbTF4MXNpQT09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isSplitted": true,
+                        "first": {
+                            "isEmpty": true
+                        },
+                        "second": {
+                            "name": "Комп'ютерна графіка",
+                            "type": 3,
+                            "professor": "Дуднік А. С.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/76901117216?pwd=eWs3U2JCRDIxUVpndytmbTF4MXNpQT09"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Українська та зарубіжна культура",
+                            "type": 4,
+                            "professor": "Москальчук М. М.",
+                            "isOnline": true,
+                            "place": "https://meet.google.com/noi-eqeo-xcw"
+                        }
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Українська та зарубіжна культура",
+                            "type": 1,
+                            "professor": "Москальчук М. М.",
+                            "isOnline": true,
+                            "place": "https://meet.google.com/sxo-bjmx-jva"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isEmpty": true
+                    },
+                    {
+                        "time": 7,
+                        "isEmpty": true
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isEmpty": true
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 1,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Веб-дизайн та веб-програмування",
+                            "type": 3,
+                            "professor":"Миколайчук Р. А.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/5895265552?pwd=dExSVkFpOVByT0RWbHd0eEV3UStKQT09"
+                        },
+                        "second": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        },
+                        "second": {
+                            "name": "Веб-дизайн та веб-програмування",
+                            "type": 3,
+                            "professor": "Миколайчук Р. А.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/5895265552?pwd=dExSVkFpOVByT0RWbHd0eEV3UStKQT09"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isEmpty": true
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 2,
+                            "professor":"Старкова О. В.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/72623180125?pwd=bXZ6N2crbTNVc0RzdFQvQjhOaEdQdz09"
+                        },
+                        "second": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 3,
+                            "professor": "Герасименко К. В.",
+                            "isOnline": false,
+                            "place": "309 ауд."
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 3,
+                            "professor": "Герасименко К. В.",
+                            "isOnline": false,
+                            "place": "309 ауд."
+                        },
+                        "second": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 2,
+                            "professor":"Старкова О. В.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/72623180125?pwd=bXZ6N2crbTNVc0RzdFQvQjhOaEdQdz09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isSplitted": true,
+                        "first": {
+                            "isEmpty": true
+                        },
+                        "second": {
+                            "name": "Технології та протоколи мультисервісних мереж",
+                            "type": 2,
+                            "professor":"Старкова О. В.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/72623180125?pwd=bXZ6N2crbTNVc0RzdFQvQjhOaEdQdz09"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Комп'ютерна логіка та дискретна математика",
+                            "type": 1,
+                            "professor": "Дахно Н. Б.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/85787816453?pwd=cEV1a3lSNEt5eTNCQTBQaE5SdXV6QT09"
+                        }
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Веб-дизайн та веб-програмування",
+                            "type": 2,
+                            "professor":"Миколайчук Р. А.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/85787816453?pwd=cEV1a3lSNEt5eTNCQTBQaE5SdXV6QT09"
+                        },
+                        "second": {
+                            "name": "Комп'ютерна логіка та дискретна математика",
+                            "type": 2,
+                            "professor": "Дахно Н. Б.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/89308921586?pwd=c2NJT2g5amF6TVdSTkIvcmJTZlhpdz09"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Комп'ютерна логіка та дискретна математика",
+                            "type": 2,
+                            "professor": "Дахно Н. Б.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/89308921586?pwd=c2NJT2g5amF6TVdSTkIvcmJTZlhpdz09"
+                        },
+                        "second": {
+                            "name": "Веб-дизайн та веб-програмування",
+                            "type": 2,
+                            "professor":"Миколайчук Р. А.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/85787816453?pwd=cEV1a3lSNEt5eTNCQTBQaE5SdXV6QT09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Основи схемотехніки",
+                            "type": 3,
+                            "professor": "Лещенко О. О.",
+                            "isOnline": true,
+                            "place": "https://us02web.zoom.us/j/89308921586?pwd=c2NJT2g5amF6TVdSTkIvcmJTZlhpdz09"
+                        },
+                        "second": {
+                            "isEmpty": true
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        },
+                        "second": {
+                            "isEmpty": true
+                        }
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Комп'ютерна графіка",
+                            "type": 1,
+                            "professor": "Дуднік А. С.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/76901117216?pwd=eWs3U2JCRDIxUVpndytmbTF4MXNpQT09"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isSplitted": true,
+                        "first": {
+                            "name": "Комп'ютерна графіка",
+                            "type": 3,
+                            "professor": "Дуднік А. С.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/76901117216?pwd=eWs3U2JCRDIxUVpndytmbTF4MXNpQT09"
+                            
+                        },
+                        "second": {
+                            "name": "Основи інформаційної безпеки",
+                            "type": 2,
+                            "professor": "Махович О. І.",
+                            "isOnline": true,
+                            "place": "https://us04web.zoom.us/j/9894978759?pwd=Sm9pQ3ZWaVA3WWtaYXh0MFlqc1lmdz09"
+                        }
+                    },
+                    {
+                        "time": 7,
+                        "isEmpty": true
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "lessons": [
+                    {
+                        "time": 4,
+                        "isEmpty": true
+                    },
+                    {
+                        "time": 5,
+                        "isSplitted": false,
+                        "general": {
+                            "name": "Українська та зарубіжна культура",
+                            "type": 1,
+                            "professor": "Москальчук М. М.",
+                            "isOnline": true,
+                            "place": "https://meet.google.com/sxo-bjmx-jva"
+                        }
+                    },
+                    {
+                        "time": 6,
+                        "isEmpty": true
+                    },
+                    {
+                        "time": 7,
+                        "isEmpty": true
+                    }
+                ]
+            }
+        ],
+        "12": []
+    }
+}

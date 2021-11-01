@@ -105,6 +105,7 @@ a {
         outline: none;
         border: none;
         transition: background-color 200ms ease-in;
+        cursor: pointer;
 
         @media screen and (max-width: 660px) {
             padding: 9px 16px 9px;
@@ -177,7 +178,7 @@ a {
         position: absolute;
         display: block;
         text-align: center;
-        margin: 150px 618px 483px 618px;
+        margin: 50px 500px 483px 500px;
 
         @media screen and (max-width: 1440px) {
             margin: 150px 378px 437px 378px;
@@ -295,6 +296,10 @@ a {
                     font-size: 14px;
                 }
             }
+
+            select option:hover {
+                background-color: $color-40-lighter;
+            }
         }
         &__button {
             width: 50%;
@@ -331,4 +336,10 @@ a {
 .pop-up.active {
     opacity: 1;
     visibility: visible;
+}
+
+.disable {
+    filter: blur(4px);
+    pointer-events: none;
+    user-select: none;
 }
