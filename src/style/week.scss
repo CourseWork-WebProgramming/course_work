@@ -138,7 +138,6 @@ $justify: space-evenly;
                 &__day{
                     background-color: #F5F3F4;
                     margin-right: 3px;
-                    width: 20%;
 
                     &:nth-child(5) {
                         margin-right: 0;
@@ -170,7 +169,7 @@ $justify: space-evenly;
     }
 
     &__name{
-        font-size: 14px;
+        font-size: 15px;
         text-align: center;
         
     }
@@ -238,7 +237,6 @@ $justify: space-evenly;
     display: flex;
     flex-direction: row;
     height: 100%;
-    width: 100%;
 
     @media screen and (max-width: 1200px) {
         width: 100%;
@@ -252,7 +250,6 @@ $justify: space-evenly;
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    width: 50%;
 }
 
 
@@ -316,14 +313,11 @@ $justify: space-evenly;
         &__day {
             font-size: 18px;
             color: $color-10;
-            text-transform: uppercase;
-            pointer-events: none;
         }
 
         &__weekday {
             font-size: 16px;
             color: $color-20;
-            pointer-events: none;
         }
     }
 
