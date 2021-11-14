@@ -1,0 +1,102 @@
+@import '/src/variables.scss';
+
+.header {
+  height: 40px;
+  padding: 5px 70px;
+  background-color: $color-60;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 1440px) {
+      padding: 5px 50px;
+  }
+
+  @media screen and (max-width: 1160px) {
+      padding: 5px 16px;
+  }
+
+  @media screen and (max-width: 660px) {
+      padding: 2.5px 10px;
+  }
+
+  &__title {
+      display: flex;
+      height: 100%;
+  }
+
+  &__logo {
+      height: 40px;
+      @media screen and (max-width: 660px) {
+          height: 40px;
+      }
+  }
+
+  &__container {
+      margin-left: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      @media screen and (max-width: 660px) {
+          margin-left: 4px;
+      }
+
+      @media screen and (max-width: 480px) {
+          display: none;
+      }
+  }
+
+  &__main-text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      color: $color-30;
+
+      @media screen and (max-width: 760px) {
+          font-size: 18px;
+      }
+
+      @media screen and (max-width: 660px) {
+          font-size: 16px;
+      }
+  }
+
+  &__secondary-text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: $color-0;
+
+      @media screen and (max-width: 760px) {
+          font-size: 14px;
+      }
+
+      @media screen and (max-width: 660px) {
+          font-size: 12px;
+      }
+  }
+
+  &__button {
+      background-color: $color-40;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: center;
+      color: $color-80;
+      padding: 8px 20px 7px;
+      outline: none;
+      border: none;
+      transition: background-color 200ms ease-in;
+
+      @media screen and (max-width: 660px) {
+          padding: 9px 16px 9px;
+          font-size: 12px;
+      }
+
+      &:hover {
+          background-color: $color-20;
+      }
+  }
+}

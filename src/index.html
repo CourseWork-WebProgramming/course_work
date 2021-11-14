@@ -1,88 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розклад занять</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.scss">
+  <meta charset="utf-8">
+  <title>Schedule</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!--No group page-->
-    <header class="header">
-        <div class="header__title">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Logo" class="header__logo">
-            </a>
-            <div class="header__container">
-                <p class="header__main-text">
-                    Факультет інформаційних технологій
-                </p>
-                <p class="header__secondary-text">
-                    Faculty of Information Technology
-                </p>
-            </div>
-        </div>
-        <button class="header__button" id="open_pop_up">Обрати групу</button>
-    </header>
-    <section class="nav" style="display: none;">
-        <ul class="nav__menu">
-            <li><a href="today.html" class="nav__menu__item nav__menu__item--active">Сьогодні</a></li>
-            <li><a href="week.html" class="nav__menu__item">Тиждень</a></li>
-            <li><a href="month.html" class="nav__menu__item">Місяць</a></li>
-        </ul>
-    </section>
-    <section class="no-group" id="no-group">
-        <section class="no-group__content">
-            <p class="no-group__text">Будь ласка, оберіть групу для відображення розкладу</p>
-            <img src="../src/img/group.png" alt="" class="no_group__icon">
-        </section>
-    </section>
-    <section class="pop-up" id="pop_up"> 
-        <div class="pop-up__header">
-            <p class="pop-up__header__title">Оберіть групу</p>
-            <button class="pop-up__header__close-button" id="close_pop_up">&#10006;</button>
-        </div>
-        <div class="pop-up__body">
-            <div class="select">
-                <select name="select-cathedra" id="select-cathedra">
-                    <option selected disabled>Оберіть кафедру</option>
-                    <option value="">Програмних систем і технологій</option>
-                    <option value="">Інтелектуальних технологій</option>
-                    <option value="">Прикладних інформаційних систем</option>
-                    <option value="">Технологій управління</option>
-                    <option value="">Кібербезпеки та захисту інформації</option>
-                    <option value="">Інформаційні системи та технології</option>
-                    <option value="">Мережевих та інтернет технологій</option>
-                </select>
-            </div>
-            <div class="select">
-                <select name="select-year-of-study" id="select-year-of-study">
-                    <option selected disabled>Оберіть курс</option>
-                    <option value="">1 курс</option>
-                    <option value="">2 курс</option>
-                    <option value="">3 курс</option>
-                    <option value="">4 курс</option>
-                </select>
-            </div>
-            <div class="select">
-                <select name="select-group" id="select-group">
-                    <option selected disabled>Оберіть групу</option>
-                    <option value="mit-11">МІТ-11</option>
-                    <option value="mit-21">МІТ-21</option>
-                    <option value="mit-31">МІТ-31</option>
-                    <option value="mit-41">МІТ-41</option>
-                </select>
-            </div>
-            <button class="pop-up__body__button" id="pop-up-get-group">Пошук</button>
-        </div>
-    </section>
-    <script src="js/pop-up.js"></script>
+  <app-root></app-root>
 </body>
-
 </html>

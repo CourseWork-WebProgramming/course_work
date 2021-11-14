@@ -1,0 +1,42 @@
+@import '/src/variables.scss';
+
+.nav {
+  &__menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style-type: none;
+      width: 360px;
+      margin: 20px auto;
+
+      @media screen and (max-width: 960px) {
+          margin: 15px auto;
+      }
+
+      @media screen and (max-width: 660px) {
+          margin: 10px auto;
+          width: 220px;
+      }
+
+      &__item {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          color: $color-10;
+          transition: color 200ms ease-in;
+
+          @media screen and (max-width: 660px) {
+              font-size: 14px;
+          }
+
+          &--active {
+              font-weight: 900;
+              color: $color-40;
+          }
+
+          &:hover {
+              color: $color-20;
+          }
+      }
+  }
+}
