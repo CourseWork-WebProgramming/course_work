@@ -11,18 +11,22 @@
   height: calc(100% - 185px);
 
   @media screen and (max-width: 960px) {
-      height: calc(100% - 175px);
+    height: calc(100% - 175px);
   }
 
   @media screen and (max-width: 768px) {
-      width: 80%;
-      padding: 10px;
-      height: calc(100% - 155px);
+    width: 80%;
+    padding: 10px;
+    height: calc(100% - 155px);
   }
 
   @media screen and (max-width: 660px) {
-      height: calc(100% - 115px);
-      width: 90%;
+    height: calc(100% - 115px);
+    width: 90%;
   }
 }
 
+.disable {
+  filter: blur(4px);
+  pointer-events: none;
+}

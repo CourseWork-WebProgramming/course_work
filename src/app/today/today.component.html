@@ -1,4 +1,4 @@
 <app-nav></app-nav>
-<div class="today">
-  <app-schedule></app-schedule>
+<div [ngClass]="{'today': true, 'disable': isGlobalPopupOpen}">
+  <app-schedule [data]="todayInfo" [date]="todayDate" [month]="todayMonth" [day]="todayDay"></app-schedule>
 </div>

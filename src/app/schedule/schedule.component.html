@@ -1,87 +1,76 @@
 <div class="schedule">
   <div class="schedule__title">
-      <p class="schedule__date">
-          7 січня
-      </p>
-      <p class="schedule__weekday">
-          Вівторок
-      </p>
+    <p class="schedule__date">
+      {{date}} {{month}}
+    </p>
+    <p class="schedule__weekday">
+      {{day}}
+    </p>
   </div>
   <div class="schedule__container">
+    <div *ngIf="!data; else elseBlock" class="schedule__class__container--empty">
+      <p>Здається, сьогодні пар немає...</p>
+      <p>Відпочивай!</p>
+    </div>
+    <ng-template #elseBlock>
       <div class="schedule__class__subgroup__container">
         <div class="schedule__class__subgroups">
           <p class="schedule__class__subgroup">1 підгрупа</p>
           <p class="schedule__class__subgroup">2 підгрупа</p>
         </div>
       </div>
-      <div class="schedule__class__container">
-          <div class="schedule__time"><p>9:00</p><p>-</p><p>10:20</p></div>
-          <div class="schedule__class__group">
-              <div class="schedule__class schedule__class--sub">
-                  <div class="schedule__class__title">
-                    <p class="schedule__class__name">Вища математика</p>
-                    <p class="schedule__class__type">Практика</p>
-                  </div>
-                  <p class="schedule__class__professor">Дахно Н. Б.</p>
-                  <p class="schedule__class__place">309 ауд.</p>
+
+      <div class="schedule__class__container" *ngFor="let item of data; odd as odd">
+        <div class="schedule__time">
+          <p *ngFor="let time of lessonsTime[item.time].split('.')">{{time}}</p>
+        </div>
+        <div [ngClass]="{'schedule__class__group': true, 'schedule__class__group--red' : odd }">
+          <div *ngIf="item.isEmpty" class="schedule__class__full"></div>
+          <ng-template [ngIf]="!item.isEmpty && item.isSplitted && item.first && item.second">
+            <div
+              [ngClass]="{'schedule__class': true, 'schedule__class--sub': true, 'schedule__class--empty': item.first.isEmpty}">
+              <div *ngIf="item.first.isEmpty" class="schedule__class__empty"></div>
+              <ng-template [ngIf]="!item.first.isEmpty">
+                <div class="schedule__class__title">
+                  <p class="schedule__class__name">{{item.first.name}}</p>
+                  <p class="schedule__class__type">{{lessonsType[item.first.type || '1']}}</p>
+                </div>
+                <p class="schedule__class__professor">{{item.first.professor}}</p>
+                <p class="schedule__class__place" *ngIf="!item.first.isOnline">{{item.first.place}}</p>
+                <a class="schedule__class__place" *ngIf="item.first.isOnline" href="{{item.first.place}}">Посилання
+                  ></a>
+              </ng-template>
+            </div>
+            <div class="schedule__class__divider"></div>
+            <div
+              [ngClass]="{'schedule__class': true, 'schedule__class--sub': true, 'schedule__class--empty': item.second.isEmpty}">
+              <div *ngIf="item.second.isEmpty" class="schedule__class__empty"></div>
+              <ng-template [ngIf]="!item.second.isEmpty">
+                <div class="schedule__class__title">
+                  <p class="schedule__class__name">{{item.second.name}}</p>
+                  <p class="schedule__class__type">{{lessonsType[item.second.type || '1']}}</p>
+                </div>
+                <p class="schedule__class__professor">{{item.second.professor}}</p>
+                <p class="schedule__class__place" *ngIf="!item.second.isOnline">{{item.second.place}}</p>
+                <a class="schedule__class__place" *ngIf="item.second.isOnline" href="{{item.second.place}}">Посилання
+                  ></a>
+              </ng-template>
+            </div>
+          </ng-template>
+          <ng-template [ngIf]="!item.isEmpty && !item.isSplitted && item.general">
+            <div class="schedule__class">
+              <div class="schedule__class__title">
+                <p class="schedule__class__name">{{item.general.name}}</p>
+                <p class="schedule__class__type">{{lessonsType[item.general.type || '1']}}</p>
               </div>
-              <div class="schedule__class__divider"></div>
-              <div class="schedule__class schedule__class--sub schedule__class--empty">
-                  <div class="schedule__class__empty"></div>
-              </div>
-          </div>
+              <p class="schedule__class__professor">{{item.general.professor}}</p>
+              <p class="schedule__class__place" *ngIf="!item.general.isOnline">{{item.general.place}}</p>
+              <a class="schedule__class__place" *ngIf="item.general.isOnline" href="{{item.general.place}}">Посилання
+                ></a>
+            </div>
+          </ng-template>
+        </div>
       </div>
-      <div class="schedule__class__container">
-          <div class="schedule__time"><p>10:30</p><p>-</p><p>11:50</p></div>
-          <div class="schedule__class__group schedule__class__group--red">
-              <div class="schedule__class">
-                  <div class="schedule__class__title">
-                    <p class="schedule__class__name">Вступ до фаху</p>
-                    <p class="schedule__class__type">Лекція</p>
-                  </div>
-                  <p class="schedule__class__professor">проф. Кравченко Ю. В.</p>
-                  <a class="schedule__class__place" href="">Посилання ></a>
-              </div>
-          </div>
-      </div>
-      <div class="schedule__class__container">
-          <div class="schedule__time"><p>12:10</p><p>-</p><p>13:30</p></div>
-          <div class="schedule__class__group">
-              <div class="schedule__class schedule__class--sub">
-                  <div class="schedule__class__title">
-                    <p class="schedule__class__name">Вступ до фаху</p>
-                    <p class="schedule__class__type">Практика</p>
-                  </div>
-                  <p class="schedule__class__professor">проф. Кравченко Ю. В.</p>
-                  <a class="schedule__class__place" href="">Посилання ></a>
-              </div>
-              <div class="schedule__class__divider"></div>
-              <div class="schedule__class schedule__class--sub">
-                  <div class="schedule__class__title">
-                    <p class="schedule__class__name">Вища математика</p>
-                    <p class="schedule__class__type">Практика</p>
-                  </div>
-                  <p class="schedule__class__professor">Дахно Н. Б.</p>
-                  <a class="schedule__class__place" href="">Посилання ></a>
-              </div>
-          </div>
-      </div>
-      <div class="schedule__class__container">
-          <div class="schedule__time"><p>9:00</p><p>-</p><p>10:20</p></div>
-          <div class="schedule__class__group schedule__class__group--red">
-              <div class="schedule__class schedule__class--sub schedule__class--empty">
-                  <div class="schedule__class__empty"></div>
-              </div>
-              <div class="schedule__class__divider schedule__class__divider--light"></div>
-              <div class="schedule__class schedule__class--sub">
-                  <div class="schedule__class__title">
-                    <p class="schedule__class__name">Вступ до фаху</p>
-                    <p class="schedule__class__type">Практика</p>
-                  </div>
-                  <p class="schedule__class__professor">проф. Кравченко Ю. В.</p>
-                  <a class="schedule__class__place" href="">Посилання ></a>
-              </div>
-          </div>
-      </div>
+    </ng-template>
   </div>
 </div>

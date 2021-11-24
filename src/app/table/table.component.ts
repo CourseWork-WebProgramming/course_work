@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { dayCase, lessonsType, monthsCase } from '../constants';
+import { Day, DayOfWeek } from '../interfaces/group';
+import { PopupService } from '../services/popup.service';
 
 @Component({
   selector: 'app-table',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
+  @Input() weekDays!: DayOfWeek[];
+  @Input() todayMonth!: number;
+  @Input() todayTime?: string[][];
+  @Input() weekSchedule: Day[] = [];
+  monthsCase = monthsCase;
+  lessonsType = lessonsType;
+  dayCase = dayCase;
 
-  constructor() { }
+  isGlobalPopupOpen = false;
+
+  constructor(private popupService: PopupService) { }
 
   ngOnInit(): void {
+    this.popupService.isPopupOpenChange.subscribe(isPopupOpen => {
+      this.isGlobalPopupOpen = isPopupOpen;
+    });
   }
 
 }

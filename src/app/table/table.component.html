@@ -1,324 +1,70 @@
-<section class="week__container">
+<section [ngClass]="{'week__container': true, 'disable': isGlobalPopupOpen}">
   <div class="week__container__days__wrapper">
-      <div class="week__container__days"> <!--Horizontal -->
-          <div class="week__container__days__wrap"> 
-              <span class="week__container__days__number">6 СІЧНЯ</span> 
-              <span class="week__container__days__name">Понеділок</span>            
-          </div>
-          <div class="week__container__days__wrap">
-              <span class="week__container__days__number">7 СІЧНЯ</span> 
-              <span class="week__container__days__name">Вівторок</span>
-                          
-          </div>
-          <div class="week__container__days__wrap">
-              <span class="week__container__days__number">8 СІЧНЯ</span>
-              <span class="week__container__days__name">Середа</span>
-                              
-          </div>
-          <div class="week__container__days__wrap">
-              <span class="week__container__days__number">9 СІЧНЯ</span>
-              <span class="week__container__days__name">Четвер</span>
-                              
-          </div>
-          <div class="week__container__days__wrap">
-              <span class="week__container__days__number">10 СІЧНЯ</span>
-              <span class="week__container__days__name">П'ятниця</span>
-                              
-          </div>
+    <div class="week__container__days">
+      <!--Horizontal -->
+      <div class="week__container__days__wrap" *ngFor="let day of weekDays">
+        <span class="week__container__days__number">{{day.date}} {{monthsCase[todayMonth]}}</span>
+        <span class="week__container__days__name">{{dayCase[day.day]}}</span>
       </div>
+    </div>
   </div>
 
 
 
   <div class="week__container__vertical">
-      <div class="week__container__vertical__time"> <!--Vertical-->
-          <span class="week__container__vertical__time__classes">9:00<br>-<br>10:20</span>
-          <span class="week__container__vertical__time__classes">10:30<br>-<br>11:50</span>
-          <span class="week__container__vertical__time__classes">12:10<br>-<br>13:30</span>
-          <span class="week__container__vertical__time__classes">13:40<br>-<br>15:00</span>
+    <div class="week__container__vertical__time">
+      <!--Vertical-->
+      <span class="week__container__vertical__time__classes" *ngFor="let timeItem of todayTime">
+        {{timeItem[0]}}<br>{{timeItem[1]}}<br>{{timeItem[2]}}
+      </span>
+    </div>
+
+    <div class="week__container__vertical__sch">
+      <div class="week__container__vertical__sch__day" *ngFor="let day of weekSchedule; odd as odd">
+        <div [ngClass]="{'lesson': true, 'lesson__type1' : !odd, 'lesson__type2': odd }"
+          *ngFor="let lesson of day.lessons">
+          <div *ngIf="lesson.isEmpty" class="lesson__empty"></div>
+          <ng-template [ngIf]="!lesson.isEmpty && lesson.isSplitted && lesson.first && lesson.second">
+            <div class="sg">
+              <div class="subgroup1">
+                <div *ngIf="lesson.first.isEmpty" class="lesson__empty"></div>
+                <ng-template [ngIf]="!lesson.first.isEmpty">
+                  <span class="lesson__name">{{lesson.first.name}}</span>
+                  <span class="lesson__type">{{lessonsType[lesson.first.type || '1']}}</span>
+                  <span class="lesson__teacher">{{lesson.first.professor}}</span>
+                  <span class="lesson__classroom" *ngIf="!lesson.first.isOnline">{{lesson.first.place}}</span>
+                  <a class="lesson__classroom" *ngIf="lesson.first.isOnline" href="{{lesson.first.place}}">Посилання
+                    ></a>
+                </ng-template>
+              </div>
+
+              <span class="vertical-line"></span>
+
+              <div class="subgroup2">
+                <div *ngIf="lesson.second.isEmpty" class="lesson__empty"></div>
+                <ng-template [ngIf]="!lesson.second.isEmpty">
+                  <span class="lesson__name">{{lesson.second.name}}</span>
+                  <span class="lesson__type">{{lessonsType[lesson.second.type || '1']}}</span>
+                  <span class="lesson__teacher">{{lesson.second.professor}}</span>
+                  <span class="lesson__classroom" *ngIf="!lesson.second.isOnline">{{lesson.second.place}}</span>
+                  <a class="lesson__classroom" *ngIf="lesson.second.isOnline" href="{{lesson.second.place}}">Посилання
+                    ></a>
+                </ng-template>
+              </div>
+            </div>
+
+          </ng-template>
+          <ng-template [ngIf]="!lesson.isEmpty && !lesson.isSplitted && lesson.general">
+            <span class="lesson__name">{{lesson.general.name}}</span>
+            <span class="lesson__type">{{lessonsType[lesson.general.type || '1']}}</span>
+            <span class="lesson__teacher">{{lesson.general.professor}}</span>
+            <span class="lesson__classroom" *ngIf="!lesson.general.isOnline">{{lesson.general.place}}</span>
+            <a class="lesson__classroom" *ngIf="lesson.general.isOnline" href="{{lesson.general.place}}">Посилання
+              ></a>
+          </ng-template>
+        </div>
       </div>
-
-      <div class="week__container__vertical__time--tablet"> <!--Vertical-->
-          <div class="week__container__vertical__time__tablet"></div>
-          <div class="week__container__vertical__time__container">
-              <span class="week__container__vertical__time__classes">9:00<br>-<br>10:20</span>
-              <span class="week__container__vertical__time__classes">10:30<br>-<br>11:50</span>
-              <span class="week__container__vertical__time__classes">12:10<br>-<br>13:30</span>
-              <span class="week__container__vertical__time__classes">13:40<br>-<br>15:00</span>
-          </div>
-      </div>
-
-      <div class="week__container__vertical__sch" >
-          <div class="week__container__vertical__sch__day">
-              <div class="lesson lesson__type1">
-                  <div class="lesson__empty"></div>
-              </div>
-              <div class="lesson lesson__type1">
-                  <span class="lesson__name">Системи банкової безпеки</span>
-                  <span class="lesson__type">Лекція</span>
-                  <span class="lesson__teacher">Мухін В. Є.</span>
-                  <span class="lesson__classroom">304 ауд.</span>
-              </div>
-              <div class="lesson lesson__type1">
-                  <span class="lesson__name"></span>
-                  <span class="lesson__type"></span>
-                  <span class="lesson__teacher"></span>
-                  <span class="lesson__classroom"></span>
-                  <div class="sg">
-                      <div class="subgroup1">
-                          <span class="lesson__name">Системи банкової безпеки</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Мухін В. Є.</span>
-                          <span class="lesson__classroom">201 ауд.</span>
-                      </div>
-                      <span class="vertical-line"></span>
-                      <div class="subgroup2">
-                          <span class="lesson__name">Технології програмування</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Герасименко О. Ю.</span>
-                          <span class="lesson__classroom">309 ауд.</span>
-                      </div>
-                      
-                  </div>
-              </div>
-              <div class="lesson  lesson__type1">
-                  <span class="lesson__name"></span>
-                  <span class="lesson__type"></span>
-                  <span class="lesson__teacher"></span>
-                  <span class="lesson__classroom"></span>
-                  <div class="sg">
-                      <div class="subgroup1">
-                          <span class="lesson__name">Системи банкової безпеки</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Мухін В. Є.</span>
-                          <span class="lesson__classroom">201 ауд.</span>
-                      </div>
-                      <span class="vertical-line"></span>
-                      <div class="subgroup2">
-                          <span class="lesson__name">Технології програмування</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Герасименко О. Ю.</span>
-                          <span class="lesson__classroom">309 ауд.</span>
-                      </div>
-                      
-                  </div>
-                  
-              </div>
-          </div>
-
-
-          <div class="week__container__vertical__sch__day">
-              <div class="lesson lesson__type2">
-                  <span class="lesson__name">Системи банкової безпеки</span>
-                  <span class="lesson__type">Лекція</span>
-                  <span class="lesson__teacher">Мухін В. Є.</span>
-                  <span class="lesson__classroom">304 ауд.</span>
-              </div>
-              <div class="lesson lesson__type2">
-                  <div class="sg">
-                      <div class="subgroup1">
-                          <span class="lesson__name">Системи банкової безпеки</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Мухін В. Є.</span>
-                          <span class="lesson__classroom">201 ауд.</span>
-                      </div>
-                      <span class="vertical-line"></span>
-                      <div class="subgroup2">
-                          <span class="lesson__name">Технології програмування</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Герасименко О. Ю.</span>
-                          <span class="lesson__classroom">309 ауд.</span>
-                      </div>
-                      
-                  </div>
-              </div>
-              <div class="lesson lesson__type2">
-                  <span class="lesson__name">Вступ до фаху</span>
-                  <span class="lesson__type">Практика</span>
-                  <span class="lesson__teacher">проф. Кравченко Ю. В.</span>
-                  <span class="lesson__classroom">Посилання ></span>
-              </div>
-              <div class="lesson lesson__type2">
-                  <span class="lesson__name">Вступ до фаху</span>
-                  <span class="lesson__type">Практика</span>
-                  <span class="lesson__teacher">проф. Кравченко Ю. В.</span>
-                  <span class="lesson__classroom">Посилання ></span>
-              </div>
-          </div>
-
-
-          <div class="week__container__vertical__sch__day">
-              <div class="lesson lesson__type1">
-                  <span class="lesson__name">Системи банкової безпеки</span>
-                  <span class="lesson__type">Лекція</span>
-                  <span class="lesson__teacher">Мухін В. Є.</span>
-                  <span class="lesson__classroom">304 ауд.</span>
-              </div>
-              <div class="lesson lesson__type1">
-                  <div class="sg">
-                      <div class="subgroup1">
-                          <span class="lesson__name">Системи банкової безпеки</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Мухін В. Є.</span>
-                          <span class="lesson__classroom">201 ауд.</span>
-                      </div>
-                      <span class="vertical-line"></span>
-                      <div class="subgroup2">
-                          <span class="lesson__name">Технології програмування</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Герасименко О. Ю.</span>
-                          <span class="lesson__classroom">309 ауд.</span>
-                      </div>
-                      
-                  </div>
-              </div>
-              <div class="lesson lesson__type1">
-                  <span class="lesson__name">Вступ до фаху</span>
-                  <span class="lesson__type">Практика</span>
-                  <span class="lesson__teacher">проф. Кравченко Ю. В.</span>
-                  <span class="lesson__classroom">Посилання ></span>
-              </div>
-              <div class="lesson lesson__type1">
-                  <div class="lesson__empty"></div>
-              </div>
-          </div>
-
-
-          <div class="week__container__vertical__sch__day">
-              <div class="lesson lesson__type2">
-                  <div class="lesson__empty"></div>
-              </div>
-              <div class="lesson lesson__type2">
-                  <div class="sg">
-                      <div class="subgroup1">
-                          <span class="lesson__name">Системи банкової безпеки</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Мухін В. Є.</span>
-                          <span class="lesson__classroom">201 ауд.</span>
-                      </div>
-                      <span class="vertical-line"></span>
-                      <div class="subgroup2">
-                          <span class="lesson__name">Технології програмування</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Герасименко О. Ю.</span>
-                          <span class="lesson__classroom">309 ауд.</span>
-                      </div>
-                      
-                  </div>
-              </div>
-              <div class="lesson lesson__type2">
-                  <span class="lesson__name">Вступ до фаху</span>
-                  <span class="lesson__type">Практика</span>
-                  <span class="lesson__teacher">проф. Кравченко Ю. В.</span>
-                  <span class="lesson__classroom">Посилання ></span>
-              </div>
-              <div class="lesson lesson__type2">
-                  <div class="lesson__empty"></div>
-              </div>
-          </div>
-
-          
-          <div class="week__container__vertical__sch__day">
-              <div class="lesson lesson__type1">
-                  <span class="lesson__name">Вища математика</span>
-                  <span class="lesson__type">Практика</span>
-                  <span class="lesson__teacher">Дахно Н. Б.</span>
-                  <span class="lesson__classroom">Посилання ></span>
-              </div>
-              <div class="lesson lesson__type1">
-                  <div class="sg">
-                      <div class="subgroup1">
-                          <span class="lesson__name">Системи банкової безпеки</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Мухін В. Є.</span>
-                          <span class="lesson__classroom">201 ауд.</span>
-                      </div>
-                      <span class="vertical-line"></span>
-                      <div class="subgroup2">
-                          <span class="lesson__name">Технології програмування</span>
-                          <span class="lesson__type">Лабораторна</span>
-                          <span class="lesson__teacher">Герасименко О. Ю.</span>
-                          <span class="lesson__classroom">309 ауд.</span>
-                      </div>
-                      
-                  </div>
-              </div>
-              <div class="lesson lesson__type1">
-                  <span class="lesson__name">Вища математика</span>
-                  <span class="lesson__type">Практика</span>
-                  <span class="lesson__teacher">Дахно Н. Б.</span>
-                  <span class="lesson__classroom">Посилання ></span>
-              </div>
-              <div class="lesson lesson__type1">
-                  <div class="lesson__empty"></div>
-              </div>
-          </div>
-
-          <div class="for-tablet">
-              <div class="lesson__subgroup__container">
-                  <div class="lesson__subgroup__title">1 підгрупа</div>
-                  <div class="lesson__subgroup__title">2 підгрупа</div>
-              </div>
-              <div class="lesson__container">
-                  <div class="lesson lesson__type1">
-                      <div class="lesson__empty"></div>
-                  </div>
-                  <div class="lesson lesson__type1">
-                      <span class="lesson__name">Системи банкової безпеки</span>
-                      <span class="lesson__type">Лекція</span>
-                      <span class="lesson__teacher">Мухін В. Є.</span>
-                      <span class="lesson__classroom">304 ауд.</span>
-                  </div>
-                  <div class="lesson lesson__type1">
-                      <span class="lesson__name"></span>
-                      <span class="lesson__type"></span>
-                      <span class="lesson__teacher"></span>
-                      <span class="lesson__classroom"></span>
-                      <div class="sg">
-                          <div class="subgroup1">
-                              <span class="lesson__name">Системи банкової безпеки</span>
-                              <span class="lesson__type">Лабораторна</span>
-                              <span class="lesson__teacher">Мухін В. Є.</span>
-                              <span class="lesson__classroom">201 ауд.</span>
-                          </div>
-                          <span class="vertical-line"></span>
-                          <div class="subgroup2">
-                              <span class="lesson__name">Технології програмування</span>
-                              <span class="lesson__type">Лабораторна</span>
-                              <span class="lesson__teacher">Герасименко О. Ю.</span>
-                              <span class="lesson__classroom">309 ауд.</span>
-                          </div>
-                          
-                      </div>
-                  </div>
-                  <div class="lesson  lesson__type1">
-                      <span class="lesson__name"></span>
-                      <span class="lesson__type"></span>
-                      <span class="lesson__teacher"></span>
-                      <span class="lesson__classroom"></span>
-                      <div class="sg">
-                          <div class="subgroup1">
-                              <span class="lesson__name">Системи банкової безпеки</span>
-                              <span class="lesson__type">Лабораторна</span>
-                              <span class="lesson__teacher">Мухін В. Є.</span>
-                              <span class="lesson__classroom">201 ауд.</span>
-                          </div>
-                          <span class="vertical-line"></span>
-                          <div class="subgroup2">
-                              <span class="lesson__name">Технології програмування</span>
-                              <span class="lesson__type">Лабораторна</span>
-                              <span class="lesson__teacher">Герасименко О. Ю.</span>
-                              <span class="lesson__classroom">309 ауд.</span>
-                          </div>
-                          
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-      
+    </div>
   </div>
-  
+
 </section>

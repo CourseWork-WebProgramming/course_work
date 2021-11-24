@@ -1,9 +1,19 @@
 <app-nav></app-nav>
-<section class="month__container">
+<section [ngClass]="{'month__container': true, 'disable': isGlobalPopupOpen}">
   <div class="month__calendar">
-    <app-calendar></app-calendar>
+    <app-calendar [selectedDate]="selectedDate" [selectedMonth]="selectedMonth"
+      [previousMonthArray]="previousMonthArray" [nextMonthArray]="nextMonthArray" [currentMonth]="currentMonth"
+      [monthTemplate]="monthTemplate" [monthInfo]="monthInfo" (chooseDayEvent)="chooseDay($event)"
+      (changeMonthEvent)="changeMonth($event)"></app-calendar>
   </div>
   <div class="month__schedule">
-    <app-schedule></app-schedule>
+    <app-schedule [data]="selectedDayInfo" [date]="selectedDate" [month]="monthsCase[selectedMonth]"
+      [day]="dayCase[selectedDay]"></app-schedule>
   </div>
 </section>
+
+<div class="popup" *ngIf="isDayPopupOpen">
+  <app-schedule [data]="selectedDayInfo" [date]="selectedDate" [month]="monthsCase[selectedMonth]"
+    [day]="dayCase[selectedDay]"></app-schedule>
+  <button class="popup__close-button" (click)="closePopup()">&#10006;</button>
+</div>
