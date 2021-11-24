@@ -1,0 +1,150 @@
+@import '/src/variables.scss';
+
+.pop-up {
+  width: 30%;
+  height: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: $color-80;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 1440px) {
+    width: 40%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 475px) {
+    width: 95%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding-top: 20px;
+
+    &__title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 36px;
+      color: $color-20;
+
+      @media screen and (max-width: 768px) {
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: 425px) {
+        font-size: 20px;
+      }
+    }
+
+    &__close-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    flex: auto;
+    justify-content: center;
+
+    .select {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      select {
+        width: 80%;
+        margin-bottom: 40px;
+        padding: 20px 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        color: $color-10;
+
+        @media screen and (max-width: 768px) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: 425px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__button {
+      width: 50%;
+      margin: 60px auto 40px auto;
+      background-color: $color-30;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      text-align: center;
+      color: $color-90;
+      padding: 15px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-20;
+      }
+
+      @media screen and (max-width: 768px) {
+        margin: 80px auto 20px auto;
+      }
+
+      @media screen and (max-width: 425px) {
+        margin: 90px auto 10px auto;
+      }
+
+      &:disabled {
+        cursor: auto;
+        background-color: $color-60;
+        user-select: none;
+      }
+    }
+  }
+}
+
+.disable {
+  filter: blur(4px);
+  pointer-events: none;
+}

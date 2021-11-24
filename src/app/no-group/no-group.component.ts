@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PopupService } from '../services/popup.service';
 
 @Component({
   selector: 'app-no-group',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoGroupComponent implements OnInit {
 
-  constructor() { }
+  isGlobalPopupOpen = false;
+
+  constructor(
+    private popupService: PopupService
+  ) { }
 
   ngOnInit(): void {
+    this.popupService.isPopupOpenChange.subscribe(isPopupOpen => {
+      this.isGlobalPopupOpen = isPopupOpen;
+    });
   }
-
 }

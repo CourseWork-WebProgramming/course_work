@@ -1,7 +1,10 @@
-<section class="nav">
+<section [ngClass]="{'nav': true, 'disable': isGlobalPopupOpen}">
   <ul class="nav__menu">
-      <li><a routerLink="/today" class="nav__menu__item">Сьогодні</a></li>
-      <li><a routerLink="/week" class="nav__menu__item">Тиждень</a></li>
-      <li><a routerLink="/month" class="nav__menu__item">Місяць</a></li>
+    <li><a routerLink="/today"
+        [ngClass]="{'nav__menu__item': true, 'nav__menu__item--active': currentUrl == '/today'}">Сьогодні</a></li>
+    <li><a routerLink="/week"
+        [ngClass]="{'nav__menu__item': true, 'nav__menu__item--active': currentUrl == '/week'}">Тиждень</a></li>
+    <li><a routerLink="/month"
+        [ngClass]="{'nav__menu__item': true, 'nav__menu__item--active': currentUrl == '/month'}">Місяць</a></li>
   </ul>
 </section>

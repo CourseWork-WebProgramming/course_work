@@ -1,247 +1,38 @@
 <div class="calendar">
-  <div class="markup">
-      <div class="markup__weekday">пн</div>
-      <div class="markup__weekday">вт</div>
-      <div class="markup__weekday">ср</div>
-      <div class="markup__weekday">чт</div>
-      <div class="markup__weekday">пт</div>
-      <div class="markup__weekday">сб</div>
-      <div class="markup__weekday">нд</div>
-      <div class="markup__day markup__day--grey">
-          <p class="markup__day__number">30</p>
+  <div [ngClass]="{'markup': true, 'markup--4rows': monthTemplate.rows == 4, 'markup--6rows': monthTemplate.rows == 6}">
+    <div class="markup__weekday">пн</div>
+    <div class="markup__weekday">вт</div>
+    <div class="markup__weekday">ср</div>
+    <div class="markup__weekday">чт</div>
+    <div class="markup__weekday">пт</div>
+    <div class="markup__weekday">сб</div>
+    <div class="markup__weekday">нд</div>
+
+    <ng-template [ngIf]="monthTemplate?.previousMonthDays">
+      <div class="markup__day markup__day--grey" *ngFor="let previous of previousMonthArray">
+        <p class="markup__day__number">{{previous}}</p>
       </div>
-      <div class="markup__day markup__day--grey">
-          <p class="markup__day__number">31</p>
+    </ng-template>
+
+    <div
+      [ngClass]="{'markup__day': true, 'markup__day--chosen': selectedDate == index + 1 && currentMonth == selectedMonth}"
+      *ngFor="let day of monthDays; index as index" (click)="chooseDay(index + 1)">
+      <p class="markup__day__number">{{index + 1}}</p>
+      <div class="markup__day__lessons" *ngIf="!!monthInfo[index+1]?.lessonsAmount?.length">
+        <div class="markup__day__lesson" *ngFor="let lessonIcon of monthInfo[index+1]?.lessonsAmount"></div>
       </div>
-      <div class="markup__day">
-          <p class="markup__day__number">1</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
+    </div>
+
+    <ng-template [ngIf]="monthTemplate?.nextMonthDays">
+      <div class="markup__day markup__day--grey" *ngFor="let next of nextMonthArray">
+        <p class="markup__day__number">{{next}}</p>
       </div>
-      <div class="markup__day">
-          <p class="markup__day__number">2</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">3</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">4</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">5</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">6</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day markup__day--chosen">
-          <p class="markup__day__number">7</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">8</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">9</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">10</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">11</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">12</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">13</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">14</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">15</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">16</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">17</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">18</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">19</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">20</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">21</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">22</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">23</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">24</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">25</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">26</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">27</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">28</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">29</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">30</p>
-          <div class="markup__day__lessons">
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-              <div class="markup__day__lesson"></div>
-          </div>
-      </div>
-      <div class="markup__day">
-          <p class="markup__day__number">31</p>
-          <div class="markup__day__lessons">
-          </div>
-      </div>
-      <div class="markup__day markup__day--grey">
-          <p class="markup__day__number">1</p>
-      </div>
-      <div class="markup__day markup__day--grey">
-          <p class="markup__day__number">2</p>
-      </div>
+    </ng-template>
   </div>
+
   <div class="selection">
-      <img src="img/month-selection-left.svg" alt="" class="selection__icon">
-      Січень
-      <img src="img/month-selection-right.svg" alt="" class="selection__icon">
+    <div class="selection__icon" (click)="previousMonth()">
+      <</div> {{months[currentMonth]}} <div class="selection__icon" (click)="nextMonth()">>
+    </div>
   </div>
 </div>

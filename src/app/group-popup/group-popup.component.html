@@ -1,1 +1,29 @@
-<p>group-popup works!</p>
+<section class="pop-up">
+  <div class="pop-up__header">
+    <p class="pop-up__header__title">Оберіть групу</p>
+    <button class="pop-up__header__close-button" (click)="closePopup()">&#10006;</button>
+  </div>
+  <div class="pop-up__body">
+    <form class="pop-up__form" [formGroup]="groupForm" (ngSubmit)="onSubmit()">
+      <div class="select">
+        <select formControlName="cathedra" required>
+          <option [ngValue]="null" disabled>Оберіть кафедру</option>
+          <option *ngFor="let cathedra of cathedras" [ngValue]="cathedra.name">{{cathedra.name}}</option>
+        </select>
+      </div>
+      <div class="select">
+        <select formControlName="year" required>
+          <option [ngValue]="null" disabled>Оберіть рік</option>
+          <option *ngFor="let year of years" [ngValue]="year.name">{{year.name}}</option>
+        </select>
+      </div>
+      <div class="select">
+        <select formControlName="group" required>
+          <option [ngValue]="null" disabled>Оберіть групу</option>
+          <option *ngFor="let group of groups" [ngValue]="group.name">{{group.name}}</option>
+        </select>
+      </div>
+      <button type="submit" class="pop-up__body__button" [disabled]="groupForm.invalid">Пошук</button>
+    </form>
+  </div>
+</section>

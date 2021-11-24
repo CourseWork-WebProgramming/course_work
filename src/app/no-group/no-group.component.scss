@@ -10,36 +10,43 @@
   align-items: center;
 
   @media screen and (max-width: 960px) {
-      height: calc(100% - 103px);
-      justify-content: flex-start;
+    height: calc(100% - 103px);
+    justify-content: flex-start;
   }
 
   @media screen and (max-width: 660px) {
-      height: calc(100% - 85px);
+    height: calc(100% - 85px);
   }
 
 
   &__text {
-      font-style: normal;
-      font-size: 36px;
-      line-height: 44px;
-      color: $color-10;
-      margin: 40px;
-      text-align: center;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 44px;
+    color: $color-10;
+    margin: 40px;
+    text-align: center;
 
-      @media screen and (max-width: 360px){
-          margin: 20px;
-          font-size: 24px;
-          line-height: 29px;
-          margin-bottom: 10px;
-      }
+    @media screen and (max-width: 360px) {
+      margin: 20px;
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 10px;
+    }
   }
+
   &__icon {
-      width: 150px;
-      height: 150px;
-      @media screen and (max-width: 360px){
-          width: 100px;
-          height: 100px;
-      }
+    width: 150px;
+    height: 150px;
+
+    @media screen and (max-width: 360px) {
+      width: 100px;
+      height: 100px;
+    }
   }
+}
+
+.disable {
+  filter: blur(4px);
+  pointer-events: none;
 }

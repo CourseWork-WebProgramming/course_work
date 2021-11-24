@@ -1,4 +1,4 @@
-<section class="no-group">
+<section [ngClass]="{'no-group': true, 'disable': isGlobalPopupOpen}">
   <p class="no-group__text">Будь ласка, оберіть групу для відображення розкладу</p>
   <img src="assets/group.png" alt="" class="no-group__icon">
 </section>

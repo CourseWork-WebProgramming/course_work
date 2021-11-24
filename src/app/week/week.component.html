@@ -1,2 +1,15 @@
 <app-nav></app-nav>
-<app-table></app-table>
+<section [ngClass]="{'days-panel-for-tablet': true, 'disable': isGlobalPopupOpen}">
+  <div
+    [ngClass]="{'days-panel-for-tablet__daycont': true, 'days-panel-for-tablet__daycont__active': day.date === selectedDate}"
+    *ngFor="let day of weekDays" (click)="chooseDay(day)">
+    <span class="days-panel-for-tablet__day">{{day.date}} {{monthsCase[todayMonth]}}</span>
+    <span class="days-panel-for-tablet__weekday">{{dayCase[day.day]}}</span>
+  </div>
+</section>
+<app-table [weekDays]="weekDays" [todayMonth]="todayMonth" [todayTime]="todayTime" [weekSchedule]="weekSchedule"
+  [ngClass]="{'week-table': true, 'disable': isGlobalPopupOpen}"></app-table>
+<div [ngClass]="{'week-schedule': true, 'disable': isGlobalPopupOpen}">
+  <app-schedule [data]="todaySchedule?.lessons" [date]="selectedDate" [month]="monthsCase[todayMonth]"
+    [day]="dayCase[selectedDay]"></app-schedule>
+</div>
