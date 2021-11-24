@@ -1,6 +1,14 @@
 # course_work
 This project is about the schedule of classes for all groups in my faculty.
 
+# How to run this project
+1. Pull Github repository
+2. Run `npm install -g @angular/cli` to install Angular CLI to your computer
+3. Run `npm install -g json-server` to install json-server to your computer
+4. Run `npm install` to install all dependencies
+5. Run `ng server` and open `http://localhost:4200/`
+6. Run `npm run server` in another tab to run json-server
+
 # ScheduleApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
